@@ -1,0 +1,19 @@
+defaults: &defaults
+  adapter: postgresql
+  encoding: unicode
+  username: postgres
+  password: password
+  host: localhost
+  pool: 25
+
+development:
+  <<: *defaults
+  database: engaged_encounter_dev
+
+test:
+  <<: *defaults
+  database: engaged_encounter_test
+
+production:
+  <<: *defaults
+  database: engaged_encounter_prod
