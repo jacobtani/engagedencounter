@@ -1,0 +1,33 @@
+<div class = "container">
+  <h2> Attendees </h2>
+  <div class= "pull-right">
+    <%= link_to "Add Attendee", new_attendee_path, class: "btn generic-button command-button hvr-sweep-to-right", id: "new-attendee-link"%>
+  </div>
+  <table class = "table table-striped">
+    <thead>
+      <th> First Name </th>
+      <th> Surname </th>
+      <th> Age </th>
+      <th> Email </th>
+      <th> Fiance's Full Name </th>
+      <th> Preferred Event </th>
+      <th> Religion </th>
+      <th> Wedding Date </th>
+    </thead>
+    <% @attendees.sort_by(&:"#{"id"}").each do |attendee| %>
+      <tr>
+        <td> <%= attendee.first_name %> </td>
+        <td> <%= attendee.surname %> </td>
+        <td> <%= attendee.age %> </td>
+        <td> <%= attendee.email %> </td>
+        <td> <%= attendee.fiance_full_name %> </td>
+        <td> <%= attendee.preferred_event %> </td>
+        <td> <%= attendee.religion %> </td>
+        <td> <%= attendee.wedding_date %> </td>
+      <!--   <td><%= link_to fa_icon("pencil", text:"Edit"), edit_guest_path(id: guest.id), class: "btn generic-button command-button hvr-sweep-to-right", id: "edit-guest-link" %>
+        <%= link_to fa_icon("trash", text: "Delete"), guest_path(guest), method: :delete,
+                class: "btn generic-button command-button hvr-sweep-to-right", id: "delete-guest-link" %></td> -->
+      </tr>
+    <%end%>
+  </table>
+</div>
