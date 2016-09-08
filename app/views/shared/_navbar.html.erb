@@ -1,0 +1,11 @@
+<div class="nav-container container-fluid">
+  <nav class="navbar navbar-fixed-top">
+    <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+    <ul class="nav-list navbar-nav pull-right">
+      <li class=<%= "active" if current_page?(welcome_path) %>><%= link_to "Home", welcome_path, class: "hvr-sweep-to-right" %></li>
+      <li class=<%= "active" if current_page?(comments_path) %>><%= link_to "Comments", comments_path, class: "hvr-sweep-to-right" %></li>
+      <li class=<%= "active" if current_page?(faq_path) %>><%= link_to "FAQ", faq_path, class: "hvr-sweep-to-right" %></li>
+      <li class=<%= "active" if current_page?(new_attendee_path) %>><%= link_to "Register", new_attendee_path, class: "hvr-sweep-to-right" %></li>
+    </ul>
+  </nav>
+</div>

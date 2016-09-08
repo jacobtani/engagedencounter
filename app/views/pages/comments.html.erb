@@ -1,0 +1,10 @@
+<div class="container">
+  <h2 align="center"> Comments </h2>
+  <div class="hr"></div>
+  <% @comments.each do |comment| %>
+    <div>
+      <p><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <%= comment["name"] %></p>
+      <p><%= comment["comment"] %></p>
+    </div>
+  <% end %>
+ </div>
