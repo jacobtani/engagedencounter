@@ -2,6 +2,9 @@ class PagesController < ApplicationController
 
   def welcome
   end
+
+  def about
+  end
   
   def faq
     @faqs = JSON.parse((File.read("#{Rails.root}/app/assets/javascripts/faq.json")))

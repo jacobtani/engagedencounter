@@ -18,20 +18,40 @@
 //= require_tree .
 $(document).ready(function() { 
 
-$('.a1').addClass('hidden');
-$('.a2').addClass('hidden');
-$('.a3').addClass('hidden');
-$('.a4').addClass('hidden');
-$('.a5').addClass('hidden');
-$('.a6').addClass('hidden');
-$('.a7').addClass('hidden');
-$('.a8').addClass('hidden');
-$('.a9').addClass('hidden');
-$('.a10').addClass('hidden');
-$('.a11').addClass('hidden');
-$('.a12').addClass('hidden');
+  // If a link has a dropdown, add sub menu toggle.
+  $('nav ul li a:not(:only-child)').click(function(e) {
+    $(this).siblings('.nav-dropdown').toggle();
+    // Close one dropdown when selecting another
+    $('.nav-dropdown').not($(this).siblings()).hide();
+    e.stopPropagation();
+  });
+  // Clicking away from dropdown will remove the dropdown class
+  $('html').click(function() {
+    $('.nav-dropdown').hide();
+  });
+  // Toggle open and close nav styles on click
+  $('#nav-toggle').click(function() {
+    $('nav ul').slideToggle();
+  });
+  // Hamburger to X toggle
+  $('#nav-toggle').on('click', function() {
+    this.classList.toggle('active');
+  });
 
- $('.q1').on('click', function() {
+  $('.a1').addClass('hidden');
+  $('.a2').addClass('hidden');
+  $('.a3').addClass('hidden');
+  $('.a4').addClass('hidden');
+  $('.a5').addClass('hidden');
+  $('.a6').addClass('hidden');
+  $('.a7').addClass('hidden');
+  $('.a8').addClass('hidden');
+  $('.a9').addClass('hidden');
+  $('.a10').addClass('hidden');
+  $('.a11').addClass('hidden');
+  $('.a12').addClass('hidden');
+
+  $('.q1').on('click', function() {
     $('.a1').removeClass('hidden');
     $('.a2').addClass('hidden');
     $('.a3').addClass('hidden');
@@ -44,9 +64,9 @@ $('.a12').addClass('hidden');
     $('.a10').addClass('hidden');
     $('.a11').addClass('hidden');
     $('.a12').addClass('hidden');
- });
+  });
 
- $('.q2').on('click', function() {
+  $('.q2').on('click', function() {
     $('.a1').addClass('hidden');
     $('.a2').removeClass('hidden');
     $('.a3').addClass('hidden');
@@ -59,7 +79,7 @@ $('.a12').addClass('hidden');
     $('.a10').addClass('hidden');
     $('.a11').addClass('hidden')
     $('.a12').addClass('hidden');
- });
+  });
 
   $('.q3').on('click', function() {
     $('.a1').addClass('hidden');
@@ -209,6 +229,5 @@ $('.a12').addClass('hidden');
     $('.a10').addClass('hidden');
     $('.a11').addClass('hidden');
     $('.a12').removeClass('hidden');
-    $('.a13').addClass('hidden');
   });
 });

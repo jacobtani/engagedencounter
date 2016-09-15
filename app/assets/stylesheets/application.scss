@@ -19,3 +19,11 @@
 .body-style{
   padding-top: 70px;
 }
+
+.right-to-left li { float: right; }
+
+body {
+  font-family: 'Avenir', serif;
+  font-size: 16px;
+  color: $black;
+}

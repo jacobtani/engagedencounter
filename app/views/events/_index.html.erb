@@ -1,0 +1,23 @@
+  <h3> Upcoming Dates </h4>
+  <% @events = locals[:events] if @events.nil? %>
+  <div class= "pull-right">
+    <%#= link_to "Add Event", new_event_path, class: "btn generic-button command-button hvr-sweep-to-right", id: "new-event-link"%>
+  </div>
+  <div class="row">
+  <div class="col-md-8">
+    <table class = "table table-striped">
+      <thead>
+        <th> Event Date </th>
+        <th> Event Name </th>
+        <th> Location </th>
+      </thead>
+      <% @events.each do |event| %>
+        <tr>
+          <td> <%= event.event_date.strftime('%d/%m/%Y') %> </td>
+          <td> <%= event.event_name %> </td>
+          <td> <%= event.location %> </td>
+        </tr>
+      <%end%>
+    </table>
+  </div>
+  </div>
