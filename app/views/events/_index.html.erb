@@ -1,10 +1,9 @@
-  <h3> Upcoming Dates </h4>
   <% @events = locals[:events] if @events.nil? %>
   <div class= "pull-right">
     <%#= link_to "Add Event", new_event_path, class: "btn generic-button command-button hvr-sweep-to-right", id: "new-event-link"%>
   </div>
-  <div class="row">
   <div class="col-md-8">
+    <h3> Upcoming Dates </h3>
     <table class = "table table-striped">
       <thead>
         <th> Event Date </th>
@@ -19,5 +18,4 @@
         </tr>
       <%end%>
     </table>
-  </div>
   </div>

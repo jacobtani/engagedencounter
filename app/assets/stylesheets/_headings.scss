@@ -1,0 +1,15 @@
+h2, h3 {
+  text-transform: uppercase;
+  font-family: "AR";
+  text-align: center;
+  font-weight: bold;
+}
+
+.hr {
+  display: block;
+  height: 40px;
+  background-repeat: no-repeat;
+  margin-bottom: 30px;
+  background-position: center;
+  background-image: url("../images/divider.png");
+}

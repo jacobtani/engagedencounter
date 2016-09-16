@@ -23,6 +23,7 @@ $(document).ready(function() {
   $("a[data-toggle='dropdown']").click(function(){
     dropdown.addClass('active');
     $('.dropdown-element').addClass('open');
+
   });
 
   $('.a1').addClass('hidden');

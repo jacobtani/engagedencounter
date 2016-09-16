@@ -1,10 +1,16 @@
 <div class="container">
-  <h2 align="center"> Comments </h2>
+  <h2> Comments </h2>
   <div class="hr"></div>
-  <% @comments.each do |comment| %>
-    <div>
-      <p><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <%= comment["name"] %></p>
-      <p><%= comment["comment"] %></p>
+  <div class="table wrapper">
+    <div class="table-row">
+      <div class="table-head">Name</div>
+      <div class="table-head">Comment</div>
     </div>
-  <% end %>
- </div>
+    <% @comments.each do |comment|%>
+      <div class="table-row">
+        <div class="table-cell"><%= comment["name"]%></div>
+        <div class="table-cell"><%= comment["comment"]%></div>
+      </div>
+    <% end %>
+  </div>
+</div>
