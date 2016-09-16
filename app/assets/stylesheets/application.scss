@@ -27,3 +27,33 @@ body {
   font-size: 16px;
   color: $black;
 }
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  padding-bottom: 50px;
+}
+
+.table{
+  display: table;
+  width:100%;
+  border-collapse:collapse;
+}
+  .table-row{
+    display: table-row;
+  }
+    .table-cell, .table-head{
+      display: table-cell;
+      padding:1em;
+      border:#f0f0f0 1px solid;
+    }
+    .table-head{
+        font-weight:bold;
+    }

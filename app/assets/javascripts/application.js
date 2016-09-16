@@ -16,7 +16,7 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
-$(document).ready(function() { 
+$(document).ready(function() {
 
   // If a link has a dropdown, add sub menu toggle.
   $('nav ul li a:not(:only-child)').click(function(e) {
@@ -91,7 +91,7 @@ $(document).ready(function() {
     $('.a7').addClass('hidden');
     $('.a8').addClass('hidden');
     $('.a9').addClass('hidden');
-    $('.a10').addClass('hidden'); 
+    $('.a10').addClass('hidden');
     $('.a11').addClass('hidden');
     $('.a12').addClass('hidden');
   });
@@ -106,7 +106,7 @@ $(document).ready(function() {
     $('.a7').addClass('hidden');
     $('.a8').addClass('hidden');
     $('.a9').addClass('hidden');
-    $('.a10').addClass('hidden'); 
+    $('.a10').addClass('hidden');
     $('.a11').addClass('hidden');
     $('.a12').addClass('hidden');
   });
@@ -121,7 +121,7 @@ $(document).ready(function() {
     $('.a7').addClass('hidden');
     $('.a8').addClass('hidden');
     $('.a9').addClass('hidden');
-    $('.a10').addClass('hidden'); 
+    $('.a10').addClass('hidden');
     $('.a11').addClass('hidden');
     $('.a12').addClass('hidden');
   });
@@ -136,7 +136,7 @@ $(document).ready(function() {
     $('.a7').addClass('hidden');
     $('.a8').addClass('hidden');
     $('.a9').addClass('hidden');
-    $('.a10').addClass('hidden'); 
+    $('.a10').addClass('hidden');
     $('.a11').addClass('hidden');
     $('.a12').addClass('hidden');
   });
@@ -151,7 +151,7 @@ $(document).ready(function() {
     $('.a7').removeClass('hidden');
     $('.a8').addClass('hidden');
     $('.a9').addClass('hidden');
-    $('.a10').addClass('hidden'); 
+    $('.a10').addClass('hidden');
     $('.a11').addClass('hidden');
     $('.a12').addClass('hidden');
   });
@@ -166,7 +166,7 @@ $(document).ready(function() {
     $('.a7').addClass('hidden');
     $('.a8').removeClass('hidden');
     $('.a9').addClass('hidden');
-    $('.a10').addClass('hidden'); 
+    $('.a10').addClass('hidden');
     $('.a11').addClass('hidden');
     $('.a12').addClass('hidden');
   });
