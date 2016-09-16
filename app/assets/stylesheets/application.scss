@@ -21,6 +21,13 @@
   padding-top: 70px;
 }
 
+.each_a {
+     margin-top: 10px;
+ }
+ .each_a:not(.hidden) {
+     display: none;
+ }
+
 .right-to-left li { float: right; }
 
 body {
