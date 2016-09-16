@@ -21,9 +21,10 @@ $(document).ready(function() {
   var dropdown = $("#main-navbar li.dropdown");
 
   $("a[data-toggle='dropdown']").click(function(){
-    dropdown.toggleClass('open');
+    dropdown.addClass('active');
+    $('.dropdown-element').addClass('open');
   });
-  
+
   $('.a1').addClass('hidden');
   $('.a2').addClass('hidden');
   $('.a3').addClass('hidden');
