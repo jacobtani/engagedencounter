@@ -25,7 +25,7 @@ $(document).ready(function() {
        var numb = content_id.match(/\d/g).join("");
        var total = ".a" + numb;
        $(total).removeClass("hidden");
-   });
+  });
 
   var dropdown = $("#main-navbar li.dropdown");
 
