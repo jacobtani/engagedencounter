@@ -1,5 +1,5 @@
 class AttendeesController < ApplicationController
-  before_action :set_attendee, only: [:update, :edit, :create, :destroy]
+  before_action :set_attendee, only: [:update, :edit, :destroy]
 
   def index
     @attendees = Attendee.all
@@ -13,8 +13,9 @@ class AttendeesController < ApplicationController
     @attendee = Attendee.new attendee_params
     respond_to do |format|
       if @attendee.save
+        SendEmail.perform(attendee: @attendee)
         flash.now[:success] = "New attendee has been successfully created"
-        format.html { redirect_to attendees_path }
+        format.html { redirect_to welcome_path }
       else
         flash[:error] = "Unable to save new attendee"
         format.html { redirect_to attendees_path }
@@ -24,7 +25,7 @@ class AttendeesController < ApplicationController
 
   def edit
   end
-  
+
   def update
     respond_to do |format|
       if @attendee.update_attributes attendee_params
@@ -44,9 +45,7 @@ class AttendeesController < ApplicationController
   private
 
   def attendee_params
-    params.require(:attendee).permit(:first_name, :surname, :email, :fiance_full_name, :age,
-                                    :phone_number, :religion, :parish,
-                                    :wedding_date, :preferred_event, :post_wedding_address)
+    params.require(:attendee).permit(:first_name, :surname, :age, :email, :fiance_full_name, :phone_number, :address, :religion, :parish, :wedding_date, :preferred_event, :post_wedding_address)
   end
 
   def set_attendee
