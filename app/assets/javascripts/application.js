@@ -18,14 +18,23 @@
 //= require_tree .
 $(document).ready(function() {
 
-  $(".question").click(function (e) {
+  $('.question').click(function (e) {
        e.preventDefault();
-       var content_id = $(this).attr("class");
-       $(".answer").addClass("hidden");
+       var content_id = $(this).attr('class');
+       $('.answer').addClass('hidden');
        var numb = content_id.match(/\d/g).join("");
-       var total = ".a" + numb;
-       $(total).removeClass("hidden");
+       var total = '.a' + numb;
+       $(total).removeClass('hidden');
   });
+
+  var dropdown = $('#main-navbar li.dropdown');
+
+  $('a[data-toggle="dropdown"]').click(function(){
+    dropdown.addClass('active');
+    $('.dropdown-element').addClass('open');
+
+  });
+
   $('.a1').addClass('hidden');
   $('.a2').addClass('hidden');
   $('.a3').addClass('hidden');
@@ -38,12 +47,4 @@ $(document).ready(function() {
   $('.a10').addClass('hidden');
   $('.a11').addClass('hidden');
   $('.a12').addClass('hidden');
-
-  var dropdown = $("#main-navbar li.dropdown");
-
-  $("a[data-toggle='dropdown']").click(function(){
-    dropdown.addClass('active');
-    $('.dropdown-element').addClass('open');
-
-  });
 });
