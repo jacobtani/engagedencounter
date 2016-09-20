@@ -18,10 +18,13 @@
 //= require_tree .
 $(document).ready(function() {
 
+  $('.a1').addClass('hidden');
+  $('.a2').addClass('hidden');
+
   $('.question').click(function (e) {
        e.preventDefault();
-       var content_id = $(this).attr('class');
        $('.answer').addClass('hidden');
+       var content_id = $(this).attr('class');
        var numb = content_id.match(/\d/g).join("");
        var total = '.a' + numb;
        $(total).removeClass('hidden');
