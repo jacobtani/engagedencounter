@@ -20,14 +20,24 @@ $(document).ready(function() {
 
   $('.a1').addClass('hidden');
   $('.a2').addClass('hidden');
+  $('.a3').addClass('hidden');
+  $('.a4').addClass('hidden');
+  $('.a5').addClass('hidden');
+  $('.a6').addClass('hidden');
+  $('.a7').addClass('hidden');
+  $('.a8').addClass('hidden');
+  $('.a9').addClass('hidden');
+  $('.a10').addClass('hidden');
+  $('.a11').addClass('hidden');
+  $('.a12').addClass('hidden');
 
   $('.question').click(function (e) {
-       e.preventDefault();
-       $('.answer').addClass('hidden');
-       var content_id = $(this).attr('class');
-       var numb = content_id.match(/\d/g).join("");
-       var total = '.a' + numb;
-       $(total).removeClass('hidden');
+    e.preventDefault();
+    $('.answer').addClass('hidden');
+    var content_id = $(this).attr('class');
+    var numb = content_id.match(/\d/g).join("");
+    var total = '.a' + numb;
+    $(total).removeClass('hidden');
   });
 
   var dropdown = $('#main-navbar li.dropdown');
