@@ -8,17 +8,16 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap_form'
 gem 'jquery-turbolinks'                         #jQuery plugin for drop-in fix binded events problem caused by Turbolinks
 gem 'devise'
-
-group :assets do
-  gem 'bootstrap-sass', '~> 3.3.5'
-  gem 'sass-rails', '~> 5.0'
-  gem 'uglifier', '>= 1.3.0'
-  gem 'bootstrap-sass', '~> 3.3.5'
-  gem 'bundler-audit'
-end
+gem 'bootstrap-sass', '~> 3.3.5'
+gem 'sass-rails', '~> 5.0'
+gem 'uglifier', '>= 1.3.0'
+gem 'bootstrap-sass', '~> 3.3.5'
+gem 'bundler-audit'
 
 group :development, :test do
-   gem "rspec-rails", '~> 3.1.0'
+   gem "rspec-rails", '~> 3.5.2'
+   gem 'rspec-its'
+   gem 'rspec-html-matchers'
    gem 'fuubar'
    gem 'pry'
    gem 'pry-nav'
