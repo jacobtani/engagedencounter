@@ -13,7 +13,8 @@ class AttendeesController < ApplicationController
     @attendee = Attendee.new attendee_params
     respond_to do |format|
       if @attendee.save
-        SendEmail.perform(attendee: @attendee)
+        SendAttendeeEmail.perform!(attendee: @attendee)
+        SendOrganiserEmail.perform!(attendee: @attendee)
         flash.now[:success] = "New attendee has been successfully created"
         format.html { redirect_to welcome_path }
       else
