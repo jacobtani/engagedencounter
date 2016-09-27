@@ -14,7 +14,6 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require turbolinks
 //= require_tree .
 $(document).ready(function() {
 
@@ -32,7 +31,6 @@ $(document).ready(function() {
     var content_id = $(this).attr('class');
     var numb = content_id.match(/\d/g).join("");
     var total = '.a' + numb;
-    debugger
     $(total).removeClass('hidden');
   });
 });
