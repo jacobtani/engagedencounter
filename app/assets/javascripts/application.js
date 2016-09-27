@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= require faq
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
@@ -24,15 +25,5 @@ $(document).ready(function() {
     dropdown.addClass('active');
     $('.dropdown-element').addClass('open');
 
-  });
-
-  $('.question').click(function (e) {
-    e.preventDefault();
-    $('.answer').addClass('hidden');
-    var content_id = $(this).attr('class');
-    var numb = content_id.match(/\d/g).join("");
-    var total = '.a' + numb;
-    debugger
-    $(total).removeClass('hidden');
   });
 });
