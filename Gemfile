@@ -20,15 +20,14 @@ group :development, :test do
    gem 'fuubar'
    gem 'pry'
    gem 'pry-nav'
+   gem 'pry-rails'
+   gem 'pry-stack_explorer'
    gem 'pry-remote'
 end
 
 group :development do
   gem 'web-console'
   gem 'listen', '~> 3.0.5'
-  gem 'pry-rails'
-  gem 'pry-stack_explorer'
-  gem 'pry-nav'
   gem 'puma', '~> 3.0'
 end
 
