@@ -26,7 +26,7 @@ $(document).ready(function() {
 
   });
 
-  $('.question').click(function (e) {
+  $('.question').on("click",function (e) {
     e.preventDefault();
     $('.answer').addClass('hidden');
     var content_id = $(this).attr('class');
