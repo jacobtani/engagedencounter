@@ -13,24 +13,7 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
-//= require bootstrap-sprockets
+//= require bootstrap.js
+//= require faq
+//= require dropdown
 //= require_tree .
-$(document).ready(function() {
-
-  var dropdown = $('#main-navbar li.dropdown');
-
-  $('a[data-toggle="dropdown"]').click(function(){
-    dropdown.addClass('active');
-    $('.dropdown-element').addClass('open');
-
-  });
-
-  $('.question').click(function (e) {
-    e.preventDefault();
-    $('.answer').addClass('hidden');
-    var content_id = $(this).attr('class');
-    var numb = content_id.match(/\d/g).join("");
-    var total = '.a' + numb;
-    $(total).removeClass('hidden');
-  });
-});
