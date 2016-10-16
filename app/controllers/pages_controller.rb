@@ -1,16 +1,16 @@
 class PagesController < ApplicationController
 
-  def welcome
-  end
-
   def about
   end
-  
+
   def faq
-    @faqs = JSON.parse((File.read("#{Rails.root}/app/assets/javascripts/faq.json")))
+    @faqs = JSON.parse((File.read("#{Rails.root}/public/json/faq.json")))
   end
 
   def comments
-    @comments = JSON.parse((File.read("#{Rails.root}/app/assets/javascripts/comments.json")))
+    @comments = JSON.parse((File.read("#{Rails.root}/public/json/comments.json")))
+  end
+
+  def welcome
   end
 end
