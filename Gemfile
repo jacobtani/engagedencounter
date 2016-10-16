@@ -5,11 +5,10 @@ gem 'pg', '~> 0.18.4'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'bootstrap_form'
-gem 'jquery-turbolinks'                         #jQuery plugin for drop-in fix binded events problem caused by Turbolinks
+gem 'jquery-turbolinks'
 gem 'devise'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
-gem 'bootstrap-sass', '~> 3.3.5'
 gem 'bundler-audit'
 
 group :development, :test do
@@ -39,8 +38,5 @@ group :test do
 end
 
 group :production do
-  gem 'rails_12factor' #heroku deployment
+  gem 'rails_12factor'
 end
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

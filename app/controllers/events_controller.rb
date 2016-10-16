@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:update, :edit, :create, :destroy]
+  before_action :authenticate_user!, except: [:index]
 
   def index
     @events = Event.all
@@ -24,7 +25,7 @@ class EventsController < ApplicationController
 
   def edit
   end
-  
+
   def update
     respond_to do |format|
       if @event.update_attributes event_params

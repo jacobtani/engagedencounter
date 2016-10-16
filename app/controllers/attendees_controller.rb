@@ -1,5 +1,6 @@
 class AttendeesController < ApplicationController
   before_action :set_attendee, only: [:update, :edit, :destroy]
+  before_action :authenticate_user!, only: [:edit, :update, :destroy]
 
   def index
     @attendees = Attendee.all
@@ -13,8 +14,7 @@ class AttendeesController < ApplicationController
     @attendee = Attendee.new attendee_params
     respond_to do |format|
       if @attendee.save
-        SendAttendeeEmail.perform!(attendee: @attendee)
-        SendOrganiserEmail.perform!(attendee: @attendee)
+        SendRegistrationConfirmationEmail.perform!(attendee: @attendee)
         flash.now[:success] = "New attendee has been successfully created"
         format.html { redirect_to welcome_path }
       else
