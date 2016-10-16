@@ -1,4 +1,4 @@
-class SendOrganiserEmail
+class SendRegistrationConfirmationEmail
   include UseCase
 
   validates :attendee, presence: true
@@ -11,15 +11,20 @@ class SendOrganiserEmail
   def perform
     return unless valid?
 
-    send_email
+    send_attendee_email
+    send_organiser_email
   end
 
   private
 
   attr_accessor :attendee
 
-  def send_email
+  def send_organiser_email
     OrganiserMailer.new_registration(attendee: attendee).deliver_now
+  end
+
+  def send_attendee_email
+    AttendeeMailer.registration_confirmation(attendee: attendee).deliver_now
   end
 
   def check_attendee_is_valid

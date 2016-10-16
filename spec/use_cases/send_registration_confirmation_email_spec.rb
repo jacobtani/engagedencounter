@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe SendAttendeeEmail do
+RSpec.describe SendRegistrationConfirmationEmail do
 
   before do
-    @email_sender = SendAttendeeEmail.new(attendee: attendee)
+    @email_sender = SendRegistrationConfirmationEmail.new(attendee: attendee)
   end
 
   describe "#perform" do
@@ -12,8 +12,13 @@ RSpec.describe SendAttendeeEmail do
 
     context 'with a successful mail sent to attendee' do
 
-      it "calls the organiser mailer" do
+      it "calls the attendee mailer" do
         expect(AttendeeMailer).to receive(:registration_confirmation).with(attendee: attendee).and_return(mailer_response)
+        @email_sender.perform
+      end
+
+      it "calls the organiser mailer" do
+        expect(OrganiserMailer).to receive(:new_registration).and_return(mailer_response)
         @email_sender.perform
       end
 
