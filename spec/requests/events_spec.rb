@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "/events", type: :request do
   include RSpecHtmlMatchers
+  let(:user){create(:user)}
 
   describe '/index' do
     before do
@@ -31,6 +32,7 @@ RSpec.describe "/events", type: :request do
   describe "/edit" do
     before do
       event = create(:event)
+      sign_in user
       get "/events/#{event.id}/edit"
     end
 
@@ -42,6 +44,7 @@ RSpec.describe "/events", type: :request do
   describe "/update" do
     before do
       event = create(:event)
+      sign_in user
       put "/events/#{event.id}", params: { event: {location: "St Teresa's Catholic Parish, Karori"} }
     end
 
