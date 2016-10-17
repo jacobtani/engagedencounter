@@ -1,5 +1,5 @@
 <div class="container">
-  <h2> Attendees </h2>
+  <h2>Attendees</h2>
   <div class= "pull-right">
     <%= link_to "Add Attendee", new_attendee_path, class: "btn generic-button command-button hvr-sweep-to-right", id: "new-attendee-link"%>
   </div>
@@ -13,8 +13,10 @@
       <div class="table-head">Preferred Event</div>
       <div class="table-head">Religion</div>
       <div class="table-head">Wedding Date</div>
+      <div class="table-head">Post Wedding Address</div>
+      <div class="table-head">Dietary Requirements</div>
     </div>
-    <% @attendees.sort_by(&:"#{"id"}").each do |attendee| %>
+    <% @attendees.each do |attendee| %>
       <div class="table-row">
         <div class="table-cell"><%= attendee.first_name %></div>
         <div class="table-cell"><%= attendee.surname %></div>
@@ -24,6 +26,8 @@
         <div class="table-cell"><%= attendee.preferred_event %></div>
         <div class="table-cell"><%= attendee.religion %></div>
         <div class="table-cell"><%= attendee.wedding_date %></div>
+        <div class="table-cell"><%= attendee.post_wedding_address %></div>
+        <div class="table-cell"><%= attendee.dietary_requirements %></div>
       </div>
     <% end %>
   </div>

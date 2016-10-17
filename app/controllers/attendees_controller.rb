@@ -3,7 +3,7 @@ class AttendeesController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :destroy]
 
   def index
-    @attendees = Attendee.all
+    @attendees = Attendee.order(:id)
   end
 
   def new

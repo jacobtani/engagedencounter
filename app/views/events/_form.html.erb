@@ -1,4 +1,4 @@
-<div class='container'>
+<div class="container">
   <%= bootstrap_form_for(@event, layout: :horizontal)  do |f| %>
     <%= f.alert_message "Please fix the errors below." %>
     <%= f.text_field :event_name, placeholder: "Enter event name", class: "form-control required", control_col: "col-sm-8", autofocus: true, label: "Event Name" %>
@@ -6,8 +6,8 @@
     <%= f.text_field :location, placeholder: "Enter event location", class: "form-control required", control_col: "col-sm-8" %>
       <%= button_tag(type: "submit", class: "btn generic-button command-button", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Saving..."}) do %>
         <i class="fa fa-save"></i> Save
-      <% end %>      
-      <%= link_to "Cancel", welcome_path, class: "btn generic-button command-button hvr-sweep-to-right" %>
+      <% end %>
+      <%= link_to "Cancel", welcome_path, class: "btn generic-button command-button" %>
     </div>
   <% end %>
 </div>
