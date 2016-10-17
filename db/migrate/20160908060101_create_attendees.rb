@@ -13,6 +13,7 @@ class CreateAttendees < ActiveRecord::Migration[5.0]
       t.datetime :wedding_date, null: false
       t.string :preferred_event, null: false
       t.string :post_wedding_address, null: false
+      t.string :dietary_requirements
     end
   end
 end
