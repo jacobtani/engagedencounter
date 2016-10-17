@@ -8,9 +8,9 @@
     <%= f.text_field :address, placeholder: "Enter your address", class: "form-control required", control_col: "col-sm-8" %>
     <%= f.text_field :phone_number, placeholder: "Enter your phone number", class: "form-control required", control_col: "col-sm-8", label: "Phone Number" %>
     <%= f.date_field :wedding_date, placeholder: "Enter your wedding date", class: "form-control required", control_col: "col-sm-8", label: "Wedding Date" %>
-    <%= f.collection_select :preferred_event, Event.all, :id, :event_name, prompt: 'Select event', class: 'form-control required', label: "Preferred Event" , cols: 10 %>
+    <%= f.collection_select :preferred_event, Event.all, :id, :event_name, prompt: 'Select event', class: 'form-control required', control_col: "col-sm-8", label: "Preferred Event" %>
     <%= f.text_field :fiance_full_name, placeholder: "Enter your fiance's full name", class: "form-control required", control_col: "col-sm-8", label: "Fiances Full Name" %>
-    <%= f.select :religion, Attendee.religion_types.keys.to_a, label: "Religion"%>
+    <%= f.select :religion, Attendee.religion_types.keys.to_a, control_col: "col-sm-8", label: "Religion"%>
     <%= f.text_field :parish, placeholder: "Enter your parish", class: "form-control required", control_col: "col-sm-8" %>
     <%= f.text_field :post_wedding_address, placeholder: "Enter your post wedding address", class: "form-control required", control_col: "col-sm-8", label: "Post Wedding Address" %>
     <%= f.text_field :dietary_requirements, placeholder: "Enter your dietary requirements (if any)", class: "form-control required", control_col: "col-sm-8", label: "Dietary Requirements" %>
