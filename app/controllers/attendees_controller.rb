@@ -46,7 +46,7 @@ class AttendeesController < ApplicationController
   private
 
   def attendee_params
-    params.require(:attendee).permit(:first_name, :surname, :age, :email, :fiance_full_name, :phone_number, :address, :religion, :parish, :wedding_date, :preferred_event, :post_wedding_address)
+    params.require(:attendee).permit(:first_name, :surname, :age, :email, :fiance_full_name, :phone_number, :address, :religion, :parish, :wedding_date, :preferred_event, :post_wedding_address, :dietary_requirements)
   end
 
   def set_attendee
