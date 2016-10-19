@@ -1,22 +1,20 @@
-<div class="container">
-  <% @events = locals[:events] if @events.nil? %>
-  <div class="pull-right">
-    <%= link_to "Add Event", new_event_path, class: "btn generic-button command-button", id: "new-event-link" if current_user %>
-  </div>
-  <div class="col-md-8">
-    <table class="table table-striped">
-      <thead>
-        <th>Event Date</th>
-        <th>Event Name</th>
-        <th>Location</th>
-      </thead>
-      <% @events.each do |event| %>
-        <tr>
-          <td><%= event.event_date.strftime('%d/%m/%Y') %></td>
-          <td><%= event.event_name %></td>
-          <td><%= event.location %></td>
-        </tr>
-      <%end%>
-    </table>
-  </div>
+<% @events = locals[:events] if @events.nil? %>
+<div class="pull-right">
+  <%= link_to "Add Event", new_event_path, class: "btn generic-button command-button", id: "new-event-link" if current_user %>
+</div>
+<div class="col-md-8">
+  <table class="table table-striped">
+    <thead>
+      <th>Event Date</th>
+      <th>Event Name</th>
+      <th>Location</th>
+    </thead>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.event_date.strftime('%d/%m/%Y') %></td>
+        <td><%= event.event_name %></td>
+        <td><%= event.location %></td>
+      </tr>
+    <%end%>
+  </table>
 </div>

@@ -7,7 +7,7 @@ class PagesController < ApplicationController
     @faqs = JSON.parse((File.read("#{Rails.root}/public/json/faq.json")))
   end
 
-  def comments
+  def feedback
     @comments = JSON.parse((File.read("#{Rails.root}/public/json/comments.json")))
   end
 

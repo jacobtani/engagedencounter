@@ -13,9 +13,11 @@
     </div>
   </div>
   <div class="row">
-      <%= render "events/index", locals: { events: Event.all }%>
-    <div class="col-md-4">
-      <%= image_tag("homepage_couple.jpg", :alt => "homepage_couple", class:"img-responsive floating-image") %>
-    </div>
+    <h3 id="upcoming-events-header">Upcoming Events</h3>
+    <%= render "events/index", locals: { events: Event.all }%>
+  </div>
+    <!-- <div class="col-md-4">
+      <%#= image_tag("homepage_couple.jpg", :alt => "homepage_couple", class:"img-responsive floating-image") %>
+    </div> -->
   </div>
 </div>

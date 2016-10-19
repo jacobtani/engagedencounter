@@ -7,6 +7,6 @@ Rails.application.routes.draw do
     get :welcome
     get :faq
     get :the_weekend
-    get :comments
+    get :feedback
   end
 end
