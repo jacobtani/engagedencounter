@@ -23,7 +23,7 @@
         relationship.
       </p>
       <h3>Upcoming Events</h3>
-      <%= render "events/index", locals: { events: Event.order(:event_date) }%>
+      <%= render "events/index", locals: { events: Event.order("event_date asc") }%>
     </div>
     <div class="col-md-4">
       <%= image_tag("ee.jpg", alt: "cee", class:"img-responsive floating-image") %>
