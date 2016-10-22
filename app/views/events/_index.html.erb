@@ -15,7 +15,7 @@
       </div>
       <% @events.each do |event| %>
         <div class="table-row">
-          <div class="table-cell"><%= event.event_date.strftime('%d/%m/%Y') %></div>
+          <div class="table-cell"><%= event.event_date %></div>
           <div class="table-cell"><%= event.event_name %></div>
           <div class="table-cell"><%= event.location %></div>
           <% if current_user && user_signed_in? %>
