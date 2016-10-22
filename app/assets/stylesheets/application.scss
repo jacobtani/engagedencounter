@@ -16,7 +16,7 @@
 @import "variables";
 @import "navbar";
 @import "headings";
-@import "tables";
+@import "pages";
 @import "images";
 
 body {
@@ -26,10 +26,3 @@ body {
   font-size: 16px;
   padding-top: 70px;
 }
-
-.each_a {
-     margin-top: 10px;
- }
- .each_a:not(.hidden) {
-     display: none;
- }

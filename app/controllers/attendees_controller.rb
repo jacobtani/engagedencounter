@@ -7,7 +7,7 @@ class AttendeesController < ApplicationController
   end
 
   def new
-    @attendee  = Attendee.new
+    @attendee = Attendee.new
   end
 
   def create
@@ -50,6 +50,6 @@ class AttendeesController < ApplicationController
   end
 
   def set_attendee
-    @attendee = Attendee.find params[:id] rescue nil
+    @attendee = Attendee.find params[:id]
   end
 end

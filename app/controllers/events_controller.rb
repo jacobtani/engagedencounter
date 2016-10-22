@@ -3,11 +3,11 @@ class EventsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
-    @events = Event.all
+    @events = Event.order(:event_date)
   end
 
   def new
-    @event  = Event.new
+    @event = Event.new
   end
 
   def create
@@ -49,6 +49,6 @@ class EventsController < ApplicationController
   end
 
   def set_event
-    @event = Event.find params[:id] rescue nil
+    @event = Event.find params[:id]
   end
 end
