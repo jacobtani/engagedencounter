@@ -1,23 +1,32 @@
-<div class="container">
+<div class="container homepage">
   <h2>Wellington Catholic Engaged Encounter</h2>
   <hr>
   <div class="row">
     <div class="col-md-8">
-      <p>Catholic Engaged Encounter is a worldwide marriage preparation course for couples contemplating marriage, whether already engaged or just thinking about a future together. It strengthens commitment by making couples think about many different aspects of married life, asking themselves (and their partner) the hard questions or the very obvious but unspoken ones. The weekend "away from it all" helps iron out many issues that could be major hurdles or challenges to compatability and gives couples an unparalleled opportunity to form a closer bond to each other and create a proven and solid foundation for a happy future.</p>
-      <p>It is an in-depth, private, personal, marriage preparation experience within the context of Catholic faith and values. You have a weekend retreat away with other engaged couples and plenty of time alone to discuss matters with your fiance to dialogue honestly and intensively about your prospective lives together such as attitudes towards children and money in a face to face way.</p>
-      <p>The weekend is open to any engaged couple wanting to prepare for a deeper, more meaningful life together in a marriage recognised by the Catholic Church according to its Church law.</p>
-      <p>However it has open to couples of other faiths, or couples with no particular church experience. We do not seek to convert.</p>
+      <p>Catholic Engaged Encounter is a worldwide marriage preparation course
+        for couples contemplating marriage, whether already engaged or just
+        thinking about a future together. It strengthens commitment by making
+        couples think about many different aspects of married life, asking
+        themselves (and their partner) the hard questions or the very obvious
+        but unspoken ones. The weekend "away from it all" helps iron out
+        many issues that could be major hurdles or challenges to compatability
+        and gives couples an unparalleled opportunity to form a closer bond
+        to each other and create a proven and solid foundation for a happy
+        future.
+      </p>
+      <p>The weekend in Wellington is open to any engaged couple wanting to
+        prepare for a deeper, more meaningful life together in a marriage
+        recognised by the Catholic Church according to its Church law.
+        It is open to couples of other faiths, or couples with no
+        particular church experience. We do not seek to convert
+        anyone who attends. The weekend is focused on your
+        relationship.
+      </p>
+      <h3>Upcoming Events</h3>
+      <%= render "events/index", locals: { events: Event.order(:event_date) }%>
     </div>
     <div class="col-md-4">
-      <%= image_tag("ee.jpg", :alt => "cee", class:"img-responsive floating-image") %>
+      <%= image_tag("ee.jpg", alt: "cee", class:"img-responsive floating-image") %>
     </div>
-  </div>
-  <div class="row">
-    <h3 id="upcoming-events-header">Upcoming Events</h3>
-    <%= render "events/index", locals: { events: Event.all }%>
-  </div>
-    <!-- <div class="col-md-4">
-      <%#= image_tag("homepage_couple.jpg", :alt => "homepage_couple", class:"img-responsive floating-image") %>
-    </div> -->
   </div>
 </div>
