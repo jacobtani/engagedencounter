@@ -1,8 +1,8 @@
-<div class="container">
+<div class="container all-attendees">
   <h2>Attendees</h2>
   <hr>
-  <div class= "pull-right">
-    <%= link_to "Add Attendee", new_attendee_path, class: "btn generic-button command-button hvr-sweep-to-right", id: "new-attendee-link"%>
+  <div class="pull-right">
+    <%= link_to "Add Attendee", new_attendee_path, class: "hollow button", id: "new-attendee-link" %>
   </div>
   <div class="table wrapper">
     <div class="table-row">
@@ -16,6 +16,7 @@
       <div class="table-head">Wedding Date</div>
       <div class="table-head">Post Wedding Address</div>
       <div class="table-head">Dietary Requirements</div>
+      <div class="table-head">Administration</div>
     </div>
     <% @attendees.each do |attendee| %>
       <div class="table-row">
@@ -29,6 +30,8 @@
         <div class="table-cell"><%= attendee.wedding_date %></div>
         <div class="table-cell"><%= attendee.post_wedding_address %></div>
         <div class="table-cell"><%= attendee.dietary_requirements %></div>
+        <div class="table-cell"><%= link_to "Edit", edit_attendee_path(id: attendee.id), class: "hollow button", id: "edit-attendee-link" %></div>
+        <div class="table-cell"><%= link_to "Delete", attendee_path(attendee), method: :delete, class: "hollow button", id: "delete-attendee-link" %></div>
       </div>
     <% end %>
   </div>

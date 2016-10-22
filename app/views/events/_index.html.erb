@@ -1,20 +1,29 @@
 <% @events = locals[:events] if @events.nil? %>
 <div class="pull-right">
-  <%= link_to "Add Event", new_event_path, class: "btn generic-button command-button", id: "new-event-link" if current_user %>
+  <%= link_to "Add Event", new_event_path, class: "hollow button", id: "new-event-link" if current_user && user_signed_in? %>
 </div>
-<div class="col-md-8">
-  <table class="table table-striped">
-    <thead>
-      <th>Event Date</th>
-      <th>Event Name</th>
-      <th>Location</th>
-    </thead>
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= event.event_date.strftime('%d/%m/%Y') %></td>
-        <td><%= event.event_name %></td>
-        <td><%= event.location %></td>
-      </tr>
-    <%end%>
-  </table>
+<div class="row all-events">
+  <div class="col-md-8">
+    <div class="table wrapper">
+      <div class="table-row">
+        <div class="table-head">Event Date</div>
+        <div class="table-head">Event Name</div>
+        <div class="table-head">Location</div>
+        <% if current_user && user_signed_in? %>
+          <div class="table-head" colspan="2">Administration</div>
+        <% end %>
+      </div>
+      <% @events.each do |event| %>
+        <div class="table-row">
+          <div class="table-cell"><%= event.event_date.strftime('%d/%m/%Y') %></div>
+          <div class="table-cell"><%= event.event_name %></div>
+          <div class="table-cell"><%= event.location %></div>
+          <% if current_user && user_signed_in? %>
+            <div class="table-cell"><%= link_to "Edit", edit_event_path(id: event.id), class: "hollow button", id: "edit-event-link" %></div>
+            <div class="table-cell"><%= link_to "Delete", event_path(event), method: :delete, class: "hollow button", id: "delete-event-link" %></div>
+          <% end %>
+        </div>
+      <%end%>
+    </div>
+  </div>
 </div>
