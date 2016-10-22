@@ -14,6 +14,9 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require bootstrap.js
+//= require foundation.min
 //= require faq
 //= require dropdown
 //= require_tree .
+
+$(function(){ $(document).foundation(); });

@@ -11,6 +11,7 @@
  * It is generally better to create a new file per style scope.
  * //=require bootstrap-theme.css
  * //=require bootstrap.scss
+ *= require foundation.min.css
  */
 @import "variables";
 @import "navbar";
