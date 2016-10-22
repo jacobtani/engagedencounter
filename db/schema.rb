@@ -10,25 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161004190344) do
+ActiveRecord::Schema.define(version: 20161022105006) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "attendees", force: :cascade do |t|
-    t.string   "first_name",           null: false
-    t.string   "surname",              null: false
-    t.text     "address",              null: false
-    t.string   "email",                null: false
-    t.string   "fiance_full_name",     null: false
-    t.integer  "age"
-    t.string   "phone_number",         null: false
-    t.string   "religion",             null: false
-    t.string   "parish"
-    t.datetime "wedding_date",         null: false
-    t.string   "preferred_event",      null: false
-    t.string   "post_wedding_address", null: false
-    t.string   "dietary_requirements"
+    t.string  "first_name",           null: false
+    t.string  "surname",              null: false
+    t.text    "address",              null: false
+    t.string  "email",                null: false
+    t.string  "fiance_full_name",     null: false
+    t.integer "age"
+    t.string  "phone_number",         null: false
+    t.string  "religion",             null: false
+    t.string  "parish"
+    t.string  "wedding_date"
+    t.string  "preferred_event",      null: false
+    t.string  "post_wedding_address", null: false
+    t.string  "dietary_requirements"
   end
 
   create_table "events", force: :cascade do |t|
