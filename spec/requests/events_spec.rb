@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "/events", type: :request do
   include RSpecHtmlMatchers
-  let(:user){create(:user)}
+  let(:user){ create(:user) }
 
   describe '/index' do
     before do
@@ -21,7 +21,8 @@ RSpec.describe "/events", type: :request do
 
   describe '/create' do
     before do
-      post '/events', params: { event: { event_name: "November 2017", event_date: "11-11-2017", location: "Pa Maria, Thorndon" }}
+      sign_in user
+      post '/events', params: { event: { event_name: "November 2017", event_date: "11-12 November 2016", location: "Pa Maria, Thorndon" }}
     end
 
     it "it redirects" do

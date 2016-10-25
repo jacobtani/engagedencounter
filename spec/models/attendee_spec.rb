@@ -11,11 +11,11 @@ RSpec.describe Attendee do
   end
 
   context 'with a missing mandatory parameter' do
-    let(:attendee){ build(:attendee, wedding_date: nil, preferred_event: create(:event)) }
+    let(:attendee){ build(:attendee, preferred_event: nil) }
 
-    it "does raise an error with nil wedding_date" do
+    it "does raise an error with nil preferred_event" do
       expect(attendee).to be_invalid
-      expect(attendee.errors.full_messages).to eq ["Wedding date can't be blank"]
+      expect(attendee.errors.full_messages).to eq ["Preferred event can't be blank"]
     end
   end
 end
