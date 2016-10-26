@@ -1,9 +1,9 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:update, :edit, :create, :destroy]
+  before_action :set_event, only: [:update, :edit, :destroy]
   before_action :authenticate_user!, except: [:index]
 
   def index
-    @events = Event.order(:event_date)
+    @events = Event.order(:id)
   end
 
   def new
