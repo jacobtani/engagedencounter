@@ -3,7 +3,7 @@ class EventsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
-    @events = Event.order(:id)
+    @events = Event.order("start_date ASC")
   end
 
   def new
@@ -45,7 +45,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:event_date, :event_name, :location)
+    params.require(:event).permit(:event_date, :event_name, :location, :start_date)
   end
 
   def set_event
