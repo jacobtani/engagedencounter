@@ -5,25 +5,24 @@
     <div class="col-md-8">
       <p>Catholic Engaged Encounter is a worldwide marriage preparation course
         for couples contemplating marriage, whether already engaged or just
-        thinking about a future together. It strengthens commitment by making
-        couples think about many different aspects of married life, asking
+        thinking about a future together. It strengthens commitment by providing the
+        opportunity for couples to think about many different aspects of married life, asking
         themselves (and their partner) the hard questions or the very obvious
         but unspoken ones. The weekend "away from it all" helps iron out
-        many issues that could be major hurdles or challenges to compatability
-        and gives couples an unparalleled opportunity to form a closer bond
+        many issues that could be major hurdles or challenges to compatability. It
+        gives couples an unparalleled opportunity to form a closer bond
         to each other and create a proven and solid foundation for a happy
         future.
       </p>
       <p>The weekend in Wellington is open to any engaged couple wanting to
         prepare for a deeper, more meaningful life together in a marriage
-        recognised by the Catholic Church according to its Church law.
-        It is open to couples of other faiths, or couples with no
-        particular church experience. We do not seek to convert
+        recognised by the Catholic Church. It is open to couples of other faiths,
+        or couples with no particular church experience. We do not seek to convert
         anyone who attends. The weekend is focused on your
         relationship.
       </p>
-      <h3>Upcoming Events</h3>
-      <%= render "events/index", locals: { events: Event.order("event_date asc") }%>
+      <h3>Upcoming Weekends</h3>
+      <%= render "events/index", locals: { events: Event.order("start_date asc") }%>
     </div>
     <div class="col-md-4">
       <%= image_tag("ee.jpg", alt: "cee", class:"img-responsive floating-image") %>
