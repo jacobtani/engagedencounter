@@ -1,10 +1,15 @@
-<div class="container faq-page">
-  <h2>Faq</h2>
-  <hr>
-  <% @faqs.each do |faq| %>
-    <dl>
-      <dt aria-label="question" class="question <%= faq["q_class"]%>"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <%= faq["question"] %></dt>
-      <dd aria-label="answer" class="answer hidden <%= faq["a_class"]%>"> <%= faq["answer"] %></dd>
-    </dl>
-  <% end %>
-</div>
+<%-
+  content_for :page_title, "FAQ"
+-%>
+
+<% content_for :page_content do %>
+  <div class="container faq-page"%>
+    <h2>Faq</h2>
+    <% @faqs.each do |faq| %>
+      <dl>
+        <dt aria-label="question" class="question <%= faq["q_class"]%>"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <%= faq["question"] %></dt>
+        <dd aria-label="answer" class="answer hidden <%= faq["a_class"]%>"> <%= faq["answer"] %></dd>
+      </dl>
+    <% end %>
+  </div>
+<% end %>

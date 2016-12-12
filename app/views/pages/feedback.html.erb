@@ -1,16 +1,21 @@
-<div class="container feedback-page">
-  <h2>Feedback</h2>
-  <hr>
-  <div class="table wrapper">
-    <div class="table-row">
-      <div class="table-head">Name</div>
-      <div class="table-head">Comment</div>
-    </div>
-    <% @comments.each do |comment|%>
+<%-
+  content_for :page_title, "Feedback"
+-%>
+
+<% content_for :page_content do %>
+  <div class="container feedback-page"%>
+    <h2>Feedback</h2>
+    <div class="table wrapper">
       <div class="table-row">
-        <div class="table-cell"><%= comment["name"]%></div>
-        <div class="table-cell"><%= comment["comment"]%></div>
+        <div class="table-head">Name</div>
+        <div class="table-head">Comment</div>
       </div>
-    <% end %>
+      <% @comments.each do |comment|%>
+        <div class="table-row">
+          <div class="table-cell"><%= comment["name"]%></div>
+          <div class="table-cell"><%= comment["comment"]%></div>
+        </div>
+      <% end %>
+    </div>
   </div>
-</div>
+<% end %>

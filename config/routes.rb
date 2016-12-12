@@ -9,5 +9,6 @@ Rails.application.routes.draw do
     get :faq
     get :the_weekend
     get :feedback
+    get :contact_us
   end
 end

@@ -1,4 +1,10 @@
-<div class="container">
-  <h2>Edit Registration</h2>
-  <%= render "form" %>
-</div>
+<%-
+  content_for :page_title, "Edit Registration"
+-%>
+
+<% content_for :page_content do %>
+  <div class="container"%>
+    <h2>Edit Registration</h2>
+    <%= render "form" %>
+  </div>
+<% end %>

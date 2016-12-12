@@ -1,42 +1,47 @@
-<div class="container">
-  <h2>The Weekend</h2>
-  <hr>
-  <div class="row">
-    <p>The weekend consists of a series of presentations beginning Saturday morning
-      and ending Sunday afternoon after Mass. It is led by a team of married couples and a
-      priest. We share our life experiences to explore your own attitudes and
-      expectations in your relationship. We will not tell you how to live
-      your life. We offer good ideas and tools to help the two of you to continue
-      growing closer through the years.
-    </p>
-    <p>After each presentation, the men and women reflect on the presentation
-      questions individually. They then come together to discuss their ideas
-      with each other.
-    </p>
-    <p>The topics covered in the presentations include ambitions, goals,
-      values, attitudes about God, sex, money, children and family. Personal reflection and couple discussion are
-      the main focus of our weekend. You get time to talk about matters
-      that you may have not considered as a couple before. Since each relationship is in a different place, your private answers
-      will be unique and special to your relationship.
-    </p>
-    <p>There are regular coffee breaks and meals provided that give couples time to socialise.</p>
+<%-
+  content_for :page_title, "The Weekend"
+-%>
+
+<% content_for :page_content do %>
+  <div class="container"%>
+    <h2>The Weekend</h2>
+    <div class="row">
+      <p>The weekend consists of a series of presentations beginning Saturday morning
+        and ending Sunday afternoon after Mass. It is led by a team of married couples and a
+        priest. We share our life experiences to explore your own attitudes and
+        expectations in your relationship. We will not tell you how to live
+        your life. We offer good ideas and tools to help the two of you to continue
+        growing closer through the years.
+      </p>
+      <p>After each presentation, the men and women reflect on the presentation
+        questions individually. They then come together to discuss their ideas
+        with each other.
+      </p>
+      <p>The topics covered in the presentations include ambitions, goals,
+        values, attitudes about God, sex, money, children and family. Personal reflection and couple discussion are
+        the main focus of our weekend. You get time to talk about matters
+        that you may have not considered as a couple before. Since each relationship is in a different place, your private answers
+        will be unique and special to your relationship.
+      </p>
+      <p>There are regular coffee breaks and meals provided that give couples time to socialise.</p>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <%= image_tag("siobhan_stephen.jpg", alt: "Stephen_Siobhan", class:"img-responsive") %>
+        <span>Stephen and Siobhan Wort</span>
+      </div>
+      <div class="col-md-3">
+        <%= image_tag("fred_yvonne.jpg", alt: "Fred_Yvonne", class:"img-responsive") %>
+        <span>Fred and Yvonne Browning</span>
+      </div>
+      <div class="col-md-3">
+        <%= image_tag("fr_ron.jpg", alt: "Fr_Ron_Bennet", class:"img-responsive") %>
+        <span>Fr Ron Bennett</span>
+      </div>
+      <div class="col-md-3">
+        <%= image_tag("nester_teresa.jpg", alt: "Nester_and_Teresa", class:"img-responsive") %>
+        <span>Nestor and Theresa Fernandez</span>
+      </div>
+    </div>
   </div>
-  <div class="row">
-    <div class="col-md-3">
-      <%= image_tag("siobhan_stephen.jpg", alt: "Stephen_Siobhan", class:"img-responsive") %>
-      <span>Stephen and Siobhan Wort</span>
-    </div>
-    <div class="col-md-3">
-      <%= image_tag("fred_yvonne.jpg", alt: "Fred_Yvonne", class:"img-responsive") %>
-      <span>Fred and Yvonne Browning</span>
-    </div>
-    <div class="col-md-3">
-      <%= image_tag("fr_ron.jpg", alt: "Fr_Ron_Bennet", class:"img-responsive") %>
-      <span>Fr Ron Bennett</span>
-    </div>
-    <div class="col-md-3">
-      <%= image_tag("nester_teresa.jpg", alt: "Nester_and_Teresa", class:"img-responsive") %>
-      <span>Nestor and Theresa Fernandez</span>
-    </div>
-  </div>
-</div>
+<% end %>

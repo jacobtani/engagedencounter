@@ -1,27 +1,32 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-4">
-      <h2>Forgot your password?</h2>
-      <hr>
-      <%= form_for(resource, as: resource_name, url: user_password_path, html: { method: :post }) do |f| %>
-        <% if resource.errors.any? %>
-          <div class="errors has-error">
-            <p class="control-label">
-              <% resource.errors.full_messages.each do |error|%>
-                <%= error %>
-              <% end %>
-            </p>
+<%-
+  content_for :page_title, "Forgot your Password"
+-%>
+
+<% content_for :page_content do %>
+  <div class="container"%>
+    <div class="row">
+      <div class="col-md-4">
+        <h2>Forgot your password?</h2>
+        <%= form_for(resource, as: resource_name, url: user_password_path, html: { method: :post }) do |f| %>
+          <% if resource.errors.any? %>
+            <div class="errors has-error">
+              <p class="control-label">
+                <% resource.errors.full_messages.each do |error|%>
+                  <%= error %>
+                <% end %>
+              </p>
+            </div>
+          <% end %>
+          <div class="form-group">
+            <%= f.label :email, class: "form-label" %>
+            <%= f.email_field :email, autofocus: true, class: "form-control", cols: 5 %>
+          </div>
+          <div class="actions">
+            <%= f.submit "Send Reset Password Email", class: "btn btn-primary" %>
+            <%= link_to "Cancel", users_path %>
           </div>
         <% end %>
-        <div class="form-group">
-          <%= f.label :email, class: "form-label" %>
-          <%= f.email_field :email, autofocus: true, class: "form-control", cols: 5 %>
-        </div>
-        <div class="actions">
-          <%= f.submit "Send Reset Password Email", class: "btn btn-primary" %>
-          <%= link_to "Cancel", users_path %>
-        </div>
-      <% end %>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
