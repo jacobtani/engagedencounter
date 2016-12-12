@@ -1,5 +1,5 @@
 class SendEnquiryEmail
-  include UseCasePattern
+  include UseCase
 
   validates :message, presence: true
 
