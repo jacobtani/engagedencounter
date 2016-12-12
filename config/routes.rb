@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, only: [:sessions, :passwords]
+  resources :messages, only: [:create]
   root 'pages#welcome'
   resources :events
   resources :attendees
