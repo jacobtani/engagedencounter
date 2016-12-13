@@ -7,7 +7,6 @@
     <div class="table wrapper">
       <div class="table-row">
         <div class="table-head">Event Date</div>
-        <div class="table-head">Event Name</div>
         <div class="table-head">Location</div>
         <% if current_user && user_signed_in? %>
           <div class="table-head" colspan="2">Administration</div>
@@ -16,7 +15,6 @@
       <% @events.each do |event| %>
         <div class="table-row">
           <div class="table-cell"><%= event.event_date %></div>
-          <div class="table-cell"><%= event.event_name %></div>
           <div class="table-cell"><%= event.location %></div>
           <% if current_user && user_signed_in? %>
             <div class="table-cell"><%= link_to "Edit", edit_event_path(id: event.id), class: "hollow button", id: "edit-event-link" %></div>

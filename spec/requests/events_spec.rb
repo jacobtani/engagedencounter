@@ -15,14 +15,14 @@ RSpec.describe "/events", type: :request do
     end
 
     it "includes event" do
-      expect(response.body).to include "January 2017"
+      expect(response.body).to include "Pa Maria, Thorndon"
     end
   end
 
   describe '/create' do
     before do
       sign_in user
-      post '/events', params: { event: { event_name: "November 2017", event_date: "11-12 November 2016", location: "Pa Maria, Thorndon" }}
+      post '/events', params: { event: { event_date: "11-12 November 2016", location: "Pa Maria, Thorndon", start_date: "2016-11-12".to_date }}
     end
 
     it "it redirects" do
