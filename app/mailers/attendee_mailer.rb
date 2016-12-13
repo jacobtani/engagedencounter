@@ -1,3 +1,5 @@
+require 'sendinblue'
+
 class AttendeeMailer < ApplicationMailer
   default :from => "engagedencounterwelington@gmail.com"
 

@@ -1,3 +1,5 @@
+require 'sendinblue'
+
 class OrganiserMailer < ApplicationMailer
   default :to => "engagedencounterwelington@gmail.com"
 
