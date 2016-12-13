@@ -8,11 +8,11 @@ class AttendeeMailer < ApplicationMailer
     data = { "to" => { attendee.email => attendee.first_name },
        "from" => ["engagedencounterwelington@gmail.com"],
        "subject" => "Registration Confirmation to Engaged Encounter",
-       "text" => "Dear " + attendee.first_name +
+       "text" => ["Dear " + attendee.first_name +
 
        "This is to confirm your registration to an Engaged Encounter weekend on " + attendee.preferred_event + ". We look forward to meeting you on this weekend.
 
-       The weekend is held at St Teresa's Presbytery, 301 Karori Road, Karori, Wellington. It is a warm and comfortable venue. We want you to feel relaxed and comfortable on the weekend and recommend casual
+       The weekend is held at St Teresas Presbytery, 301 Karori Road, Karori, Wellington. It is a warm and comfortable venue. We want you to feel relaxed and comfortable on the weekend and recommend casual
        clothing.
 
        The event runs from Saturday 8am - 8pm and Sunday 8.45am - 4pm. Please note that breakfast is not provided but the rest of the weekend is fully catered.
@@ -25,7 +25,7 @@ class AttendeeMailer < ApplicationMailer
        Cheers,
        Simon and Kate Olsen (EE Registrars)
        engagedencounterwelington@gmail.com
-      ",
+      "],
        "html" => '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
       <html xmlns="http://www.w3.org/1999/xhtml">
       <head>
