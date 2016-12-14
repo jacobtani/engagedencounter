@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>http://www.cee-wellington.co.nz/</loc>
+<lastmod>2016-12-14T03:51:00+00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>1.0</priority>
+</url>
+<url>
+<loc>http://www.cee-wellington.co.nz/faq</loc>
+<lastmod>2016-12-14T03:51:00+00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>http://www.cee-wellington.co.nz/the_weekend</loc>
+<lastmod>2016-12-14T03:51:00+00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>http://www.cee-wellington.co.nz/contact_us</loc>
+<lastmod>2016-12-14T03:51:00+00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>http://www.cee-wellington.co.nz/feedback</loc>
+<lastmod>2016-12-14T03:51:00+00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.6</priority>
+</url>
+</urlset>

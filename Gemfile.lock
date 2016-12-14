@@ -60,6 +60,7 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
     docile (1.1.5)
+    dynamic_sitemaps (2.0.0)
     erubis (2.7.0)
     execjs (2.7.0)
     factory_girl (4.7.0)
@@ -268,6 +269,7 @@ DEPENDENCIES
   bundler-audit
   codeclimate-test-reporter
   devise
+  dynamic_sitemaps
   factory_girl_rails (~> 4.4)
   fuubar
   guard-minitest
