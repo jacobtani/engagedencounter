@@ -11,7 +11,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'bundler-audit'
 gem 'sendinblue'
-gem "dynamic_sitemaps"
+gem 'dynamic_sitemaps'
+gem 'google-analytics-rails'
 
 group :development, :test do
    gem "rspec-rails", '~> 3.5.2'
