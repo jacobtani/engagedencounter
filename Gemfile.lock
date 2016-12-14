@@ -60,7 +60,6 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
     docile (1.1.5)
-    dynamic_sitemaps (2.0.0)
     erubis (2.7.0)
     execjs (2.7.0)
     factory_girl (4.7.0)
@@ -75,7 +74,6 @@ GEM
       ruby-progressbar (~> 1.4)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
-    google-analytics-rails (1.1.0)
     guard (2.14.0)
       formatador (>= 0.2.4)
       listen (>= 2.7, < 4.0)
@@ -270,10 +268,8 @@ DEPENDENCIES
   bundler-audit
   codeclimate-test-reporter
   devise
-  dynamic_sitemaps
   factory_girl_rails (~> 4.4)
   fuubar
-  google-analytics-rails
   guard-minitest
   guard-rspec
   jbuilder (~> 2.5)
