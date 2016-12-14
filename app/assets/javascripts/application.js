@@ -17,7 +17,6 @@
 //= require foundation.min
 //= require faq
 //= require dropdown
-//= require google_analytics
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
