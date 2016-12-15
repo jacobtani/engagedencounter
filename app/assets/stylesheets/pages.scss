@@ -27,3 +27,10 @@
 .homepage {
   h3 { text-align: left; }
 }
+
+@media (max-width: 767px) {
+  .the-weekend-page {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
