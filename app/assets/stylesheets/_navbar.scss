@@ -8,3 +8,11 @@
 .navbar-inverse .navbar-nav > li > a {
   color: $white;
 }
+
+@media (max-width: 767px) {
+  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+    color: $white;
+    font-size: 15px;
+    text-align: center;
+  }
+}
