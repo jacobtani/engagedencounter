@@ -9,7 +9,7 @@ class OrganiserMailer < ApplicationMailer
     "from" => [message.email, message.full_name],
     "replyto" => ["engagedencounterwellington@gmail.com","Engaged Encounter Wellington"],
     "subject" => message.message_subject,
-    "text" => ["Dear EE Organisers,
+    "text" => ["Dear Simon & Kate,
 
     I have a question/enquiry: " +
 
@@ -151,7 +151,7 @@ class OrganiserMailer < ApplicationMailer
                     <table width="100%" cellpadding="0" cellspacing="0" border="0" class="contents section-main" align="center" style="font-family:Lato, sans-serif;text-align:left;font-size:14px;line-height:19px;background-color:#ffffff;border-left-width:1px;border-left-style:solid;border-left-color:#f2f2f2;border-right-width:1px;border-right-style:solid;border-right-color:#f2f2f2;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#f2f2f2;">
                       <tr class="one-col">
                         <td class="inner" style="padding-top:33px;padding-bottom:33px;padding-right:30px;padding-left:30px;">
-                          <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;">Dear Simon and Kate,</p>
+                          <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;">Dear Simon & Kate,</p>
                           <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;">There is a new message/enquiry regarding EE: </p>
                           <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;">' +  message.content + '</p><br>
                           <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;">Cheers,</p>
@@ -180,7 +180,7 @@ class OrganiserMailer < ApplicationMailer
     m = Sendinblue::Mailin.new("https://api.sendinblue.com/v2.0","NUSmczHdfYwsEMjT",5)
     data = {
        "to" => { "engagedencounterwellington@gmail.com" => "Engaged Encounter Wellington" },
-       "from" => [attendee.email, attendee.first_name],
+       "from" => [attendee.email, ([attendee.first_name, attendee.surname].reject(&:empty?).join(' '))],
        "subject" => "New Registration to Engaged Encounter",
        "text" => ["Dear Simon & Kate,
 
@@ -332,7 +332,7 @@ class OrganiserMailer < ApplicationMailer
            								<table width="100%" cellpadding="0" cellspacing="0" border="0" class="contents section-main" align="center" style="font-family:Lato, sans-serif;text-align:left;font-size:14px;line-height:19px;background-color:#ffffff;border-left-width:1px;border-left-style:solid;border-left-color:#f2f2f2;border-right-width:1px;border-right-style:solid;border-right-color:#f2f2f2;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#f2f2f2;">
            									<tr class="one-col">
            										<td class="inner" style="padding-top:33px;padding-bottom:33px;padding-right:30px;padding-left:30px;">
-           											<p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;">Dear EE Organisers,</p>
+           											<p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;">Dear Simon & Kate,</p>
            											<p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;">A new attendee has registered for an Engaged Encounter Weekend. Their details are as follows:</p>
            											<p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Name:</b> ' + [attendee.first_name, attendee.surname].reject(&:empty?).join(' ') + '</p>
                                 <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Age:</b> ' + attendee.age.to_s + '</p>

@@ -5,7 +5,7 @@ class AttendeeMailer < ApplicationMailer
 
   def registration_confirmation(attendee:)
     m = Sendinblue::Mailin.new("https://api.sendinblue.com/v2.0","NUSmczHdfYwsEMjT",5)
-    data = { "to" => { attendee.email => attendee.first_name },
+    data = { "to" => { attendee.email => ([attendee.first_name, attendee.surname].reject(&:empty?).join(' ')) },
        "from" => ["engagedencounterwellington@gmail.com", "Engaged Encounter Wellington"],
        "subject" => "Registration Confirmation to Engaged Encounter",
        "text" => ['Dear ' + attendee.first_name + '
