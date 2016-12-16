@@ -26,22 +26,7 @@
       <p>There are regular coffee breaks and meals provided that give couples time to socialise.</p>
     </div>
     <div class="row">
-      <div class="col-md-3">
-        <%= image_tag("siobhan_stephen.jpg", alt: "Stephen_Siobhan", class:"img-responsive") %>
-        <span>Stephen and Siobhan Wort</span>
-      </div>
-      <div class="col-md-3">
-        <%= image_tag("fred_yvonne.jpg", alt: "Fred_Yvonne", class:"img-responsive") %>
-        <span>Fred and Yvonne Browning</span>
-      </div>
-      <div class="col-md-3">
-        <%= image_tag("fr_ron.jpg", alt: "Fr_Ron_Bennet", class:"img-responsive") %>
-        <span>Fr Ron Bennett</span>
-      </div>
-      <div class="col-md-3">
-        <%= image_tag("nester_teresa.jpg", alt: "Nester_and_Teresa", class:"img-responsive") %>
-        <span>Nestor and Theresa Fernandez</span>
-      </div>
+      <%= render "pages/team" %>
     </div>
   </div>
 <% end %>

@@ -1,3 +1,20 @@
+@mixin a11y {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+
+.team-page {
+  dt {  @include a11y(); }
+  p { font-weight: bold; }
+  dt, dd {
+      line-height: 0.8;
+  }
+}
+
 .all-events, .all-attendees, .feedback-page {
   .table {
     display: table;

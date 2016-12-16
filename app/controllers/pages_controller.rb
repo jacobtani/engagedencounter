@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
 
-  def about
+  def the_weekend
   end
 
   def contact_us
