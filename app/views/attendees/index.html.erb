@@ -29,8 +29,7 @@
         <div class="table-cell"><%= attendee.wedding_date %></div>
         <div class="table-cell"><%= attendee.post_wedding_address %></div>
         <div class="table-cell"><%= attendee.dietary_requirements %></div>
-        <div class="table-cell"><%= link_to "Edit", edit_attendee_path(id: attendee.id), class: "hollow button", id: "edit-attendee-link" %></div>
-        <div class="table-cell"><%= link_to "Delete", attendee_path(attendee), method: :delete, class: "hollow button", id: "delete-attendee-link" %></div>
+        <div class="table-cell"><%= link_to "Edit", edit_attendee_path(id: attendee.id), class: "hollow button", id: "edit-attendee-link" %><%= link_to "Delete", attendee_path(attendee), method: :delete, class: "hollow button", id: "delete-attendee-link" %></div>
       </div>
     <% end %>
   </div>
