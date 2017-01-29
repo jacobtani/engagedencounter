@@ -1,24 +1,24 @@
-# README
+# Engaged Encounter Wellington
+This is an application for the Wellington Engaged Encounter. It is a Catholic marriage preparation course.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Setup
 
-Things you may want to cover:
+* Install all required gems: ```bundle install```
 
-* Ruby version
+* Update the database configuration file 'database.yml'.
 
-* System dependencies
+* Create database: ```rake db:create```
 
-* Configuration
+* Run all migrations: ```rake db:migrate```
 
-* Database creation
+* Seed the database: ```rake db:seed```
 
-* Database initialization
+* Run application server: ```rails s```
 
-* How to run the test suite
+### Database
 
-* Services (job queues, cache servers, search engines, etc.)
+Engaged Encounter uses a PostgreSQL database to build the application. Ensure you have it running on your machine (please refer to: http://www.gotealeaf.com/blog/how-to-install-postgresql-on-a-mac)
 
-* Deployment instructions
+### Author
 
-* ...
+* Tania Jacob (https://github.com/jacobtani)
