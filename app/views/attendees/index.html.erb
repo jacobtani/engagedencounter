@@ -24,13 +24,12 @@
         <div class="table-cell"><%= attendee.age %></div>
         <div class="table-cell"><%= attendee.email %></div>
         <div class="table-cell"><%= attendee.fiance_full_name %></div>
-        <div class="table-cell"><%= attendee.preferred_event %></div>
+        <div class="table-cell"><%= Event.find(attendee.preferred_event).event_date.to_s %></div>
         <div class="table-cell"><%= attendee.religion %></div>
         <div class="table-cell"><%= attendee.wedding_date %></div>
         <div class="table-cell"><%= attendee.post_wedding_address %></div>
         <div class="table-cell"><%= attendee.dietary_requirements %></div>
-        <div class="table-cell"><%= link_to "Edit", edit_attendee_path(id: attendee.id), class: "hollow button", id: "edit-attendee-link" %></div>
-        <div class="table-cell"><%= link_to "Delete", attendee_path(attendee), method: :delete, class: "hollow button", id: "delete-attendee-link" %></div>
+        <div class="table-cell"><%= link_to "Edit", edit_attendee_path(id: attendee.id), class: "hollow button", id: "edit-attendee-link" %><%= link_to "Delete", attendee_path(attendee), method: :delete, class: "hollow button", id: "delete-attendee-link" %></div>
       </div>
     <% end %>
   </div>
