@@ -4,6 +4,14 @@ class AttendeesController < ApplicationController
 
   def index
     @attendees = Attendee.order(:id)
+
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = AttendeesPdf.new(attendees: @attendees)
+        send_data pdf.render, filename: "attendees_#{Date.current}.pdf", type: 'application/pdf'
+      end
+    end
   end
 
   def new
