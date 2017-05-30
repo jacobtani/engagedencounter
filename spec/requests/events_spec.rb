@@ -53,4 +53,16 @@ RSpec.describe "/events", type: :request do
       expect(response.status).to eq(302)
     end
   end
+
+  describe "/delete" do
+    before do
+      @event = create(:event)
+      sign_in user
+      delete "/events/#{@event.id}"
+    end
+
+    it "redirect_to the index page" do
+      expect(response.status).to eq(302)
+    end
+  end
 end

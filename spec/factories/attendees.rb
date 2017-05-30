@@ -12,4 +12,5 @@ FactoryGirl.define do
     wedding_date "18-01-2017"
     post_wedding_address "4 Cashmere Ave, Khandallah, Wellington"
   end
+
 end

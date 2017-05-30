@@ -192,7 +192,7 @@ class OrganiserMailer < ApplicationMailer
          Email: " + attendee.email + "
          Phone Number: " + attendee.phone_number + "
          Wedding Date: " + attendee.wedding_date.strftime('%-d %B %Y') + "
-         Preferred Event: " + Event.find(attendee.preferred_event).event_date.to_s + "
+         Preferred Event: " + attendee.event.event_date.to_s + "
          Fiance Full Name: " + attendee.fiance_full_name + "
          Religion: " + attendee.religion + "
          Parish: " + attendee.parish + "
@@ -340,7 +340,7 @@ class OrganiserMailer < ApplicationMailer
                                 <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Phone Number:</b> ' + attendee.phone_number + '</p>
                                 <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Email:</b> ' + attendee.email + '</p>
                                 <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Wedding Date:</b> ' + attendee.wedding_date.strftime('%-d %B %Y') + '</p>
-                                <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Preferred Weekend:</b> ' +  Event.find(attendee.preferred_event).event_date.to_s + '</p>
+                                <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Preferred Weekend:</b> ' +  attendee.event.event_date.to_s + '</p>
                                 <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Fiance Full Name:</b> ' +  attendee.fiance_full_name + '</p>
                                 <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Religion:</b> ' +  attendee.religion + '</p>
                                 <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Parish:</b> ' +  attendee.parish + '</p>

@@ -6,7 +6,7 @@ RSpec.describe "/attendees", type: :request do
 
   describe '/index' do
     before do
-      create(:attendee, preferred_event: create(:event))
+      create(:attendee, preferred_event: create(:event), event: create(:event))
       get '/attendees'
     end
 
@@ -21,7 +21,8 @@ RSpec.describe "/attendees", type: :request do
 
   describe '/create' do
     before do
-      post '/attendees', params: { attendee: { first_name: "Jane", surname: "Jamieson", email: "jane@gmail.com", religion: "CATHOLIC", wedding_date: Date.today + 2.weeks, preferred_event: create(:event), phone_number: 12345, age: 25, address: "5 North Shore, Wellington", post_wedding_address: "Unknown", fiance_full_name: "Mr Me" }}
+      event = create(:event)
+      post '/attendees', params: { attendee: { first_name: "Jane", surname: "Jamieson", email: "jane@gmail.com", religion: "CATHOLIC", wedding_date: Date.today + 2.weeks, preferred_event: event.id, event: event.id, phone_number: 12345, age: 25, address: "5 North Shore, Wellington", post_wedding_address: "Unknown", fiance_full_name: "Mr Me" }}
     end
 
     it "is redirects to welcome page" do
@@ -43,7 +44,7 @@ RSpec.describe "/attendees", type: :request do
 
   describe "/update" do
     before do
-      attendee = create(:attendee, preferred_event: create(:event), surname: "Ross")
+      attendee = create(:attendee, preferred_event: create(:event), event: create(:event), surname: "Ross")
       sign_in user
       put "/attendees/#{attendee.id}", params: { attendee: {surname: "Ross"} }
     end

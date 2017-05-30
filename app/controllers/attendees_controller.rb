@@ -20,6 +20,7 @@ class AttendeesController < ApplicationController
 
   def create
     @attendee = Attendee.new attendee_params
+    @attendee.event = Event.find(params[:attendee][:preferred_event])
     respond_to do |format|
       if @attendee.save
         SendRegistrationConfirmationEmail.perform!(attendee: @attendee)
@@ -54,7 +55,7 @@ class AttendeesController < ApplicationController
   private
 
   def attendee_params
-    params.require(:attendee).permit(:first_name, :surname, :age, :email, :fiance_full_name, :phone_number, :address, :religion, :parish, :wedding_date, :preferred_event, :post_wedding_address, :dietary_requirements)
+    params.require(:attendee).permit(:first_name, :surname, :age, :email, :fiance_full_name, :phone_number, :address, :religion, :parish, :wedding_date, :preferred_event, :post_wedding_address, :dietary_requirements, :event_id)
   end
 
   def set_attendee
