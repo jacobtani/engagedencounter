@@ -1,17 +1,17 @@
 .navbar {
-  background: $red;
-  color: $white;
+  background: #981E32;
+  color: #FFFFFF;
   text-align: center;
   text-transform: uppercase;
 }
 
 .navbar-inverse .navbar-nav > li > a {
-  color: $white;
+  color: #FFFFFF;
 }
 
 @media (max-width: 767px) {
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
-    color: $white;
+    color: #FFFFFF;
     font-size: 15px;
     text-align: center;
   }
