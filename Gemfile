@@ -29,7 +29,7 @@ end
 group :development do
   gem 'web-console'
   gem 'listen', '~> 3.0.5'
-  gem 'puma', '~> 3.0'
+  gem 'puma', '~> 3.12'
 end
 
 group :test do
