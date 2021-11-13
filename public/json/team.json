@@ -1,11 +1,14 @@
 [
   {
-          "name_1": "Fred & Yvonne Browning",
+          "name_1": "Geoff & Sandy Best",
           "file_1": "yvonne_fred.jpg",
-          "title_1": "Presenting Couple",
-          "name_2": "Fr Ron Bennett",
-          "file_2": "fr_ron.jpg",
-          "title_2": "Presenting Priest"
+          "title_1": "Coordinators",
+          "name_2": "Fred & Yvonne Browning",
+          "file_2": "yvonne_fred.jpg",
+          "title_2": "Hospitality",
+          "name_3": "Fr Ron Bennett",
+          "file_3": "fr_ron.jpg",
+          "title_3": "Presenting Priest"
 
   },
   {
