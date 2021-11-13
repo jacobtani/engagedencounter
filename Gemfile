@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
+gem 'rails', '~> 5.0.7'
 gem 'pg', '~> 0.18.4'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
@@ -29,7 +29,7 @@ end
 group :development do
   gem 'web-console'
   gem 'listen', '~> 3.0.5'
-  gem 'puma', '~> 3.12'
+  gem 'puma', '~> 5.5'
 end
 
 group :test do
