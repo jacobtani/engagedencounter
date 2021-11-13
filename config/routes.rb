@@ -4,11 +4,12 @@ Rails.application.routes.draw do
   root 'pages#welcome'
   resources :events
   resources :attendees
-  controller :pages do
-    get :welcome
-    get :faq
-    get :the_weekend
-    get :feedback
-    get :contact_us
+  resources :pages do
+    get :welcome, on: :collection
+    get :faq, on: :collection
+    get :the_weekend, on: :collection
+    get :feedback, on: :collection
+    get :contact_us, on: :collection
+    get :links, on: :collection
   end
 end
