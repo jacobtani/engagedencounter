@@ -1,5 +1,5 @@
 # Engaged Encounter Wellington
-This is an application for the Wellington Engaged Encounter. It is a Catholic marriage preparation course.
+This is an application for the Wellington Engaged Encounter. It is a Catholic marriage preparation course using Rails.
 
 ### Setup
 
