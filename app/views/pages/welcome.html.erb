@@ -26,6 +26,7 @@
           relationship.
         </p>
         <h3>Upcoming Weekends</h3>
+        <p>Please note if there are no weekends displayed yet, the default location for sessions are in Karori, Wellington</p>
         <%= render "events/index", locals: { events: Event.order("start_date asc") }%>
       </div>
       <div class="col-md-4">
