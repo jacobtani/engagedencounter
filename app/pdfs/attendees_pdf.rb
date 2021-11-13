@@ -21,10 +21,11 @@ class AttendeesPdf < Prawn::Document
   end
 
   def attendees_rows
-    [["Name", "Age", "Address", "Phone", "Email", "Religion-Parish", "Post-Wedding-Address", "WeddingDate", "FianceName", "Event", "DietaryReqs"]] +
+    [["Name", "Preferred Name", "Age", "Address", "Phone", "Email", "Religion-Parish", "Post-Wedding-Address", "WeddingDate", "FianceName", "Event", "DietaryReqs"]] +
      @attendees.map do |attendee|
        [
          [ attendee.first_name, attendee.surname ].join("\n"),
+         attendee.preferred_name,
          attendee.age,
          attendee.address,
          attendee.phone_number,

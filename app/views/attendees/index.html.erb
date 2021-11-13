@@ -7,6 +7,7 @@
   <div class="table wrapper">
     <div class="table-row">
       <div class="table-head">Name</div>
+      <div class="table-head">Preferred Name</div>
       <div class="table-head">Age</div>
       <div class="table-head">Address</div>
       <div class="table-head">Phone</div>
@@ -21,6 +22,7 @@
     <% @attendees.each do |attendee| %>
       <div class="table-row">
         <div class="table-cell"><%= [attendee.first_name, attendee.surname].join(' ') %></div>
+        <div class="table-cell"><%= attendee.preferred_name %></div>
         <div class="table-cell"><%= attendee.age %></div>
         <div class="table-cell"><%= attendee.address %></div>
         <div class="table-cell"><%= attendee.phone_number %></div>
