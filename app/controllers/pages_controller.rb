@@ -6,6 +6,9 @@ class PagesController < ApplicationController
   def contact_us
   end
 
+  def links
+  end
+
   def faq
     @faqs = JSON.parse((File.read("#{Rails.root}/public/json/faq.json")))
   end
