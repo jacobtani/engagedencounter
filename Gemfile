@@ -14,6 +14,7 @@ gem 'bundler-audit', '~> 0.9.0.1'
 gem 'sendinblue'
 gem 'prawn'
 gem 'prawn-table'
+gem 'json', '~> 2.6', '>= 2.6.1'
 
 group :development, :test do
    gem "rspec-rails", '~> 5.0.0'
@@ -30,7 +31,7 @@ end
 group :development do
   gem 'web-console'
   gem 'listen', '~> 3.7'
-  gem 'puma', '~> 5.4'
+  gem 'puma', '~> 5.5', '>= 5.5.2'
 end
 
 group :test do

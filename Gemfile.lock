@@ -127,7 +127,7 @@ GEM
     jquery-turbolinks (2.1.0)
       railties (>= 3.1.0)
       turbolinks
-    json (2.0.2)
+    json (2.6.1)
     listen (3.7.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -176,7 +176,7 @@ GEM
     pry-stack_explorer (0.4.9.2)
       binding_of_caller (>= 0.7)
       pry (>= 0.9.11)
-    puma (5.5.0)
+    puma (5.5.2)
       nio4r (~> 2.0)
     racc (1.6.0)
     rack (2.2.3)
@@ -312,6 +312,7 @@ DEPENDENCIES
   jbuilder (~> 2.11, >= 2.11.3)
   jquery-rails
   jquery-turbolinks
+  json (~> 2.6, >= 2.6.1)
   listen (~> 3.7)
   mocha
   pg (~> 1.2, >= 1.2.3)
@@ -322,7 +323,7 @@ DEPENDENCIES
   pry-rails
   pry-remote
   pry-stack_explorer
-  puma (~> 5.4)
+  puma (~> 5.5, >= 5.5.2)
   rails (~> 6.1, >= 6.1.4.1)
   rails_12factor
   rspec-html-matchers
