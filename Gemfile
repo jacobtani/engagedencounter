@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 ruby "2.7.0"
 
-gem 'rails', '~> 5.2', '>= 5.2.6'
+gem 'rails', '~> 6.1', '>= 6.1.4.1'
 gem 'pg', '~> 1.2', '>= 1.2.3'
 gem 'jquery-rails'
-gem 'jbuilder', '~> 2.10.2'
+gem 'jbuilder', '~> 2.11', '>= 2.11.3'
 gem 'bootstrap_form'
 gem 'jquery-turbolinks'
 gem 'devise', '~> 4.8'
