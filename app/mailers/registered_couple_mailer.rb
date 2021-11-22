@@ -4,7 +4,7 @@ class RegisteredCoupleMailer < ApplicationMailer
   default :from => "engagedencounterwellington@gmail.com"
 
   def registration_confirmation(registered_couple:)
-    m = Sendinblue::Mailin.new("https://api.sendinblue.com/v2.0","NUSmczHdfYwsEMjT",5)
+    m = Sendinblue::Mailin.new("https://api.sendinblue.com/v2.0",Rails.application.credentials.send_blue_api_key,5)
     data = { "to" => { registered_couple.email => ([registered_couple.first_name, registered_couple.surname].reject(&:empty?).join(' ')) },
        "from" => ["engagedencounterwellington@gmail.com", "Engaged Encounter Wellington"],
        "subject" => "Registration Confirmation to Engaged Encounter",

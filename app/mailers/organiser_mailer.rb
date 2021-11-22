@@ -4,7 +4,7 @@ class OrganiserMailer < ApplicationMailer
   default :to => "engagedencounterwellington@gmail.com"
 
   def send_enquiry(message:)
-    m = Sendinblue::Mailin.new("https://api.sendinblue.com/v2.0","NUSmczHdfYwsEMjT",5)
+    m = Sendinblue::Mailin.new("https://api.sendinblue.com/v2.0",Rails.application.credentials.send_blue_api_key,5)
     data = { "to" => {"engagedencounterwellington@gmail.com"=>"Engaged Encounter Wellington"},
     "from" => [message.email, message.full_name],
     "replyto" => ["engagedencounterwellington@gmail.com","Engaged Encounter Wellington"],
