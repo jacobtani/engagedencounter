@@ -3,17 +3,17 @@ require 'rails_helper'
 RSpec.describe SendRegistrationConfirmationEmail do
 
   before do
-    @email_sender = SendRegistrationConfirmationEmail.new(attendee: attendee)
+    @email_sender = SendRegistrationConfirmationEmail.new(registered_couple: registered_couple)
   end
 
   describe "#perform" do
-    let(:attendee){ create(:attendee, preferred_event: create(:event)) }
+    let(:registered_couple){ create(:registered_couple, preferred_event: create(:event)) }
     let(:mailer_response){double('mailer', deliver_now: true)}
 
-    context 'with a successful mail sent to attendee' do
+    context 'with a successful mail sent to registered_couple' do
 
-      it "calls the attendee mailer" do
-        expect(AttendeeMailer).to receive(:registration_confirmation).with(attendee: attendee).and_return(mailer_response)
+      it "calls the registered_couple mailer" do
+        expect(RegisteredCoupleMailer).to receive(:registration_confirmation).with(registered_couple: registered_couple).and_return(mailer_response)
         @email_sender.perform
       end
 
@@ -28,15 +28,15 @@ RSpec.describe SendRegistrationConfirmationEmail do
       end
     end
 
-    context 'with an invalid attendee' do
-      let(:attendee){ build(:attendee, surname: nil, preferred_event: create(:event)) }
+    context 'with an invalid registered_couple' do
+      let(:registered_couple){ build(:registered_couple, surname: nil, preferred_event: create(:event)) }
 
       before do
         @email_sender.perform
       end
 
       it "adds an error" do
-        expect(@email_sender.errors.full_messages).to eq ["Attendee is invalid"]
+        expect(@email_sender.errors.full_messages).to eq ["Registered couple is invalid"]
       end
 
       it { expect(@email_sender.success?).to eq(false) }

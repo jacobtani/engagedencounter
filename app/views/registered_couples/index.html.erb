@@ -1,0 +1,51 @@
+<div class="container all-registered-couples">
+  <h2>Registered Couples</h2>
+  <div class="pull-right">
+    <%= link_to "Add Registered Couple", new_registered_couple_path, class: "hollow button", id: "new-registered-couple-link" %>
+    <%= link_to "Download PDF", registered_couples_path(format: "pdf"), class: "hollow button" %>
+  </div>
+  <div class="table wrapper">
+    <div class="table-row">
+      <div class="table-head">Name</div>
+      <div class="table-head">Preferred Name</div>
+      <div class="table-head">Age</div>
+      <div class="table-head">Address</div>
+      <div class="table-head">Phone</div>
+      <div class="table-head">Email</div>
+      <div class="table-head">ReligionParish</div>
+      <div class="table-head">Fiance Name</div>
+      <div class="table-head">Fiance Preferred Name</div>
+      <div class="table-head">Fiance Age</div>
+      <div class="table-head">Fiance Address</div>
+      <div class="table-head">Fiance Phone</div>
+      <div class="table-head">Fiance Email</div>
+      <div class="table-head">Fiance ReligionParish</div>
+      <div class="table-head">Event</div>
+      <div class="table-head">WdngDate</div>
+      <div class="table-head">DietaryReqs</div>
+      <div class="table-head">Admin</div>
+    </div>
+    <% @registered_couples.each do |registered_couple| %>
+      <div class="table-row">
+        <div class="table-cell"><%= [registered_couple.first_name, registered_couple.surname].join(' ') %></div>
+        <div class="table-cell"><%= registered_couple.preferred_name %></div>
+        <div class="table-cell"><%= registered_couple.age %></div>
+        <div class="table-cell"><%= registered_couple.address %></div>
+        <div class="table-cell"><%= registered_couple.phone_number %></div>
+        <div class="table-cell"><%= registered_couple.email %></div>
+        <div class="table-cell"><%= [registered_couple.parish, registered_couple.religion].join('-') %></div>
+        <div class="table-cell"><%= [registered_couple.fiance_first_name, registered_couple.fiance_surname].join(' ') %></div>
+        <div class="table-cell"><%= registered_couple.fiance_preferred_name %></div>
+        <div class="table-cell"><%= registered_couple.fiance_age %></div>
+        <div class="table-cell"><%= registered_couple.fiance_address %></div>
+        <div class="table-cell"><%= registered_couple.fiance_phone_number %></div>
+        <div class="table-cell"><%= registered_couple.fiance_email %></div>
+        <div class="table-cell"><%= [registered_couple.fiance_parish, registered_couple.fiance_religion].join('-') %></div>
+        <div class="table-cell"><%= registered_couple.event.event_date.to_s %></div>
+        <div class="table-cell"><%= registered_couple.wedding_date %></div>
+        <div class="table-cell"><%= registered_couple.dietary_requirements %></div>
+        <div class="table-cell"><%= link_to "Edit", edit_registered_couple_path(id: registered_couple.id), class: "hollow button", id: "edit-registered-couple-link" %><%= link_to "Delete", registered_couple_path(registered_couple), method: :delete, class: "hollow button", id: "delete-registered-couple-link" %></div>
+      </div>
+    <% end %>
+  </div>
+</div>

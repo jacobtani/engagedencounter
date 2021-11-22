@@ -1,16 +1,16 @@
 require 'sendinblue'
 
-class AttendeeMailer < ApplicationMailer
+class RegisteredCoupleMailer < ApplicationMailer
   default :from => "engagedencounterwellington@gmail.com"
 
-  def registration_confirmation(attendee:)
+  def registration_confirmation(registered_couple:)
     m = Sendinblue::Mailin.new("https://api.sendinblue.com/v2.0","NUSmczHdfYwsEMjT",5)
-    data = { "to" => { attendee.email => ([attendee.first_name, attendee.surname].reject(&:empty?).join(' ')) },
+    data = { "to" => { registered_couple.email => ([registered_couple.first_name, registered_couple.surname].reject(&:empty?).join(' ')) },
        "from" => ["engagedencounterwellington@gmail.com", "Engaged Encounter Wellington"],
        "subject" => "Registration Confirmation to Engaged Encounter",
-       "text" => ['Dear ' + attendee.first_name + '
+       "text" => ['Dear ' + registered_couple.preferred_name + '' + registered_couple.fiance_preferred_name + '
 
-       This is to confirm your registration to an Engaged Encounter weekend on ' + attendee.event.event_date.to_s + '. We look forward to meeting you on this weekend.
+       This is to confirm your registration to an Engaged Encounter weekend on ' + registered_couple.event.event_date.to_s + '. We look forward to meeting you on this weekend.
 
        The weekend is held at St Teresas Presbytery, 301 Karori Road, Karori, Wellington. It is a warm and comfortable venue. We want you to feel relaxed and comfortable on the weekend and recommend casual
        clothing.
@@ -158,8 +158,8 @@ class AttendeeMailer < ApplicationMailer
       								<table width="100%" cellpadding="0" cellspacing="0" border="0" class="contents section-main" align="center" style="font-family:Lato, sans-serif;text-align:left;font-size:14px;line-height:19px;background-color:#ffffff;border-left-width:1px;border-left-style:solid;border-left-color:#f2f2f2;border-right-width:1px;border-right-style:solid;border-right-color:#f2f2f2;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#f2f2f2;">
       									<tr class="one-col">
       										<td class="inner" style="padding-top:33px;padding-bottom:33px;padding-right:30px;padding-left:30px;">
-      											<p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;">Dear ' + attendee.first_name + ',</p>
-      											<p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;">This is to confirm your registration to an Engaged Encounter weekend on ' + attendee.event.event_date.to_s + '. We look forward to meeting you on this weekend.</p>
+      											<p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;">Dear ' + registered_couple.first_name + ',</p>
+      											<p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;">This is to confirm your registration to an Engaged Encounter weekend on ' + registered_couple.event.event_date.to_s + '. We look forward to meeting you on this weekend.</p>
       											<p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;">The weekend is held at St Teresas Presbytery, 301 Karori Road, Karori, Wellington. It is a warm and comfortable venue. We want you to feel relaxed and comfortable on the weekend and recommend casual clothing.</p>
       											<p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;">The event runs from Saturday 8am - 8pm and Sunday 8.45am - 4pm. Please note that breakfast is not provided but the rest of the weekend is fully catered.</p>
       											<p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;">In the week leading up to the weekend a member of the presenting team will phone you. Please ask them anything else you need to know to enable you to enjoy the weekend. We wish you all the very best for your EE Weekend and trust you will enjoy the time as you focus on each other and your future life together.</p>

@@ -176,28 +176,36 @@ class OrganiserMailer < ApplicationMailer
     puts result
   end
 
-  def new_registration(attendee:)
+  def new_registration(registered_couple:)
     m = Sendinblue::Mailin.new("https://api.sendinblue.com/v2.0","NUSmczHdfYwsEMjT",5)
     data = {
        "to" => { "engagedencounterwellington@gmail.com" => "Engaged Encounter Wellington" },
-       "from" => [attendee.email, ([attendee.first_name, attendee.surname].reject(&:empty?).join(' '))],
+       "from" => [registered_couple.email, ([registered_couple.first_name, registered_couple.surname].reject(&:empty?).join(' '))],
        "subject" => "New Registration to Engaged Encounter",
        "text" => ["Dear Simon & Kate,
 
-         A new attendee has registered for an Engaged Encounter Weekend. Their details are as follows:
+         A new registered couple has registered for an Engaged Encounter Weekend. Their details are as follows:
 
-         Name: " + [attendee.first_name, attendee.surname].reject(&:empty?).join(' ') + "
-         Age: " + attendee.age.to_s + "
-         Address: " + attendee.address + "
-         Email: " + attendee.email + "
-         Phone Number: " + attendee.phone_number + "
-         Wedding Date: " + attendee.wedding_date.strftime('%-d %B %Y') + "
-         Preferred Event: " + attendee.event.event_date.to_s + "
-         Fiance Full Name: " + attendee.fiance_full_name + "
-         Religion: " + attendee.religion + "
-         Parish: " + attendee.parish + "
-         Post Wedding Address: " + attendee.post_wedding_address + "
-         Dietary Requirements: " + attendee.dietary_requirements + "
+         Name: " + [registered_couple.first_name, registered_couple.surname].reject(&:empty?).join(' ') + "
+         Age: " + registered_couple.age.to_s + "
+         Address: " + registered_couple.address + "
+         Email: " + registered_couple.email + "
+         Phone Number: " + registered_couple.phone_number + "
+         Wedding Date: " + registered_couple.wedding_date.strftime('%-d %B %Y') + "
+         Preferred Event: " + registered_couple.event.event_date.to_s + "
+         Religion: " + registered_couple.religion + "
+         Parish: " + registered_couple.parish + "
+         Fiance First Name: " + registered_couple.fiance_first_name + "
+         Fiance Surname: " + registered_couple.fiance_surname + "
+         Fiance Preferred Name: " + registered_couple.fiance_preferred_name + "
+         Fiance Age: " + registered_couple.fiance_age.to_s + "
+         Fiance Email: " + registered_couple.fiance_email + "
+         Fiance Address: " + registered_couple.fiance_address + "
+         Fiance Phone Number: " + registered_couple.fiance_phone_number + "
+         Fiance Religion: " + registered_couple.fiance_religion + "
+         Fiance Parish: " + registered_couple.fiance_parish + "
+         Post Wedding Address: " + registered_couple.post_wedding_address + "
+         Dietary Requirements: " + registered_couple.dietary_requirements + "
 
          Cheers,
          EE Website"],
@@ -333,19 +341,27 @@ class OrganiserMailer < ApplicationMailer
            									<tr class="one-col">
            										<td class="inner" style="padding-top:33px;padding-bottom:33px;padding-right:30px;padding-left:30px;">
            											<p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;">Dear Simon & Kate,</p>
-           											<p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;">A new attendee has registered for an Engaged Encounter Weekend. Their details are as follows:</p>
-           											<p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Name:</b> ' + [attendee.first_name, attendee.surname].reject(&:empty?).join(' ') + '</p>
-                                <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Age:</b> ' + attendee.age.to_s + '</p>
-                                <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Address:</b> ' + attendee.address + '</p>
-                                <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Phone Number:</b> ' + attendee.phone_number + '</p>
-                                <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Email:</b> ' + attendee.email + '</p>
-                                <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Wedding Date:</b> ' + attendee.wedding_date.strftime('%-d %B %Y') + '</p>
-                                <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Preferred Weekend:</b> ' +  attendee.event.event_date.to_s + '</p>
-                                <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Fiance Full Name:</b> ' +  attendee.fiance_full_name + '</p>
-                                <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Religion:</b> ' +  attendee.religion + '</p>
-                                <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Parish:</b> ' +  attendee.parish + '</p>
-                                <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Post Wedding Address:</b> ' +  attendee.post_wedding_address + '</p>
-                                <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Dietary Requirements:</b> ' +  attendee.dietary_requirements + '</p><br>
+           											<p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;">A new registered couple has registered for an Engaged Encounter Weekend. Their details are as follows:</p>
+           											<p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Name:</b> ' + [registered_couple.first_name, registered_couple.surname].reject(&:empty?).join(' ') + '</p>
+                                <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Preferred Name:</b> ' + registered_couple.preferred_name + '</p>
+                                <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Age:</b> ' + registered_couple.age.to_s + '</p>
+                                <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Address:</b> ' + registered_couple.address + '</p>
+                                <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Phone Number:</b> ' + registered_couple.phone_number + '</p>
+                                <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Email:</b> ' + registered_couple.email + '</p>
+                                <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Religion:</b> ' +  registered_couple.religion + '</p>
+                                <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Parish:</b> ' +  registered_couple.parish + '</p>
+                                <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Name:</b> ' + [registered_couple.fiance_first_name, registered_couple.fiance_surname].reject(&:empty?).join(' ') + '</p>
+                                <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Fiance Preferred Name:</b> ' + registered_couple.fiance_preferred_name + '</p>
+                                <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Age:</b> ' + registered_couple.fiance_age.to_s + '</p>
+                                <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Address:</b> ' + registered_couple.fiance_address + '</p>
+                                <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Phone Number:</b> ' + registered_couple.fiance_phone_number + '</p>
+                                <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Email:</b> ' + registered_couple.fiance_email + '</p>
+                                <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Religion:</b> ' +  registered_couple.fiance_religion + '</p>
+                                <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Parish:</b> ' +  registered_couple.fiance_parish + '</p>
+                                <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Wedding Date:</b> ' + registered_couple.wedding_date.strftime('%-d %B %Y') + '</p>
+                                <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Preferred Weekend:</b> ' +  registered_couple.event.event_date.to_s + '</p>
+                                <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Post Wedding Address:</b> ' +  registered_couple.post_wedding_address + '</p>
+                                <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;"><b>Dietary Requirements:</b> ' +  registered_couple.dietary_requirements + '</p><br>
                                 <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;">Cheers,</p>
                                 <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:12px;">EE Website</p>
            										</td>

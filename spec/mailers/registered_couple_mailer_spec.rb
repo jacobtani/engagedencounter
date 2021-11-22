@@ -1,13 +1,13 @@
 require "rails_helper"
 
-RSpec.describe AttendeeMailer, :type => :mailer do
+RSpec.describe RegisteredCoupleMailer, :type => :mailer do
   let!(:event) { create(:event) }
-  let!(:attendee){ create(:attendee, preferred_event: event, event_id: event.id)}
+  let!(:registered_couple){ create(:registered_couple, preferred_event: event, event_id: event.id)}
 
   describe "send_notification" do
     context 'when sending mail it has the right content' do
       before do
-        @mail = AttendeeMailer.registration_confirmation(attendee: attendee).deliver_now
+        @mail = RegisteredCoupleMailer.registration_confirmation(registered_couple: registered_couple).deliver_now
       end
 
       it "has appropriate subject" do

@@ -10,17 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_13_110302) do
+ActiveRecord::Schema.define(version: 2021_11_22_073803) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "attendees", id: :serial, force: :cascade do |t|
+  create_table "events", id: :serial, force: :cascade do |t|
+    t.string "location", null: false
+    t.string "event_date"
+    t.date "start_date"
+  end
+
+  create_table "registered_couples", id: :serial, force: :cascade do |t|
     t.string "first_name", null: false
     t.string "surname", null: false
     t.text "address", null: false
     t.string "email", null: false
-    t.string "fiance_full_name", null: false
     t.integer "age"
     t.string "phone_number", null: false
     t.string "religion", null: false
@@ -31,13 +36,16 @@ ActiveRecord::Schema.define(version: 2021_11_13_110302) do
     t.date "wedding_date"
     t.integer "event_id"
     t.string "preferred_name"
-    t.index ["event_id"], name: "index_attendees_on_event_id"
-  end
-
-  create_table "events", id: :serial, force: :cascade do |t|
-    t.string "location", null: false
-    t.string "event_date"
-    t.date "start_date"
+    t.string "fiance_preferred_name", null: false
+    t.string "fiance_first_name", null: false
+    t.string "fiance_surname", null: false
+    t.integer "fiance_age"
+    t.string "fiance_email", null: false
+    t.text "fiance_address", null: false
+    t.string "fiance_phone_number", null: false
+    t.string "fiance_religion", null: false
+    t.string "fiance_parish"
+    t.index ["event_id"], name: "index_registered_couples_on_event_id"
   end
 
   create_table "users", id: :serial, force: :cascade do |t|

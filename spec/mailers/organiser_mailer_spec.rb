@@ -2,12 +2,12 @@ require "rails_helper"
 
 RSpec.describe OrganiserMailer, :type => :mailer do
   let!(:event) { create(:event) }
-  let!(:attendee){ create(:attendee, preferred_event: event, event_id: event.id)}
+  let!(:registered_couple){ create(:registered_couple, preferred_event: event, event_id: event.id)}
 
   describe "send_notification" do
     context 'when sending mail it has the right content' do
       before do
-        @mail = OrganiserMailer.new_registration(attendee: attendee).deliver_now
+        @mail = OrganiserMailer.new_registration(registered_couple: registered_couple).deliver_now
       end
 
       it "has appropriate subject" do
@@ -23,7 +23,7 @@ RSpec.describe OrganiserMailer, :type => :mailer do
       end
 
       it "includes the new registration has been made message" do
-        expect(@mail.body).to include "A new attendee has registered for an Engaged Encounter Weekend. Their details are as follows:"
+        expect(@mail.body).to include "A new registered_couple has registered for an Engaged Encounter Weekend. Their details are as follows:"
       end
     end
   end
