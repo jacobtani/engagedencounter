@@ -7,14 +7,21 @@ class RegisteredCoupleMailer < ApplicationMailer
 		email_data = {
 			subject: 'Registration Confirmation to Engaged Encounter',
 			to: to(registered_couple),
-			replyTo: ["engagedencounterwellington@gmail.com", "Engaged Encounter Wellington"],
+      replyTo: SibApiV3Sdk::SendSmtpEmailReplyTo.new(
+        email: "engagedencounterwellington@gmail.com",
+        name: "Engaged Encounter Wellington",
+      ),
 			htmlContent: html(registered_couple),
+      sender: SibApiV3Sdk::SendSmtpEmailSender.new(
+        email: "engagedencounterwellington@gmail.com",
+        name: "Engaged Encounter Wellington"
+      )
 		}
 
 		result = api_instance.send_transac_email(email_data)
     puts result
-	rescue SibApiV3Sdk::ApiError => e
-		puts "Exception when calling TransactionalEmailsApi->send_transac_email: #{e}"
+  rescue SibApiV3Sdk::ApiError => e
+	  puts "REGISTERED COUPLE MAILER: Exception when calling TransactionalEmailsApi->send_transac_email: #{e}"
   end
 
   private
@@ -24,15 +31,9 @@ class RegisteredCoupleMailer < ApplicationMailer
   end
 
 	def to(registered_couple)
-		{
-			registered_couple.email =>
-				(
-					[
-						registered_couple.first_name,
-						registered_couple.surname
-					].reject(&:empty?).join(' ')
-				)
-		}
+    [
+      {email: registered_couple.email, name: registered_couple.full_name_no_blanks}
+    ]
 	end
 
 	def html(registered_couple)

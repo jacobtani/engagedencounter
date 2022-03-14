@@ -7,6 +7,10 @@ class RegisteredCouple < ApplicationRecord
     "#{first_name} #{surname}"
   end
 
+  def full_name_no_blanks
+    [first_name, surname].reject(&:empty?).join(' ')
+  end
+
   def fiance_full_name
     "#{fiance_first_name} #{fiance_surname}"
   end
