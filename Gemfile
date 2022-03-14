@@ -17,7 +17,6 @@ gem 'sib-api-v3-sdk', '~> 7.5'
 gem 'prawn'
 gem 'prawn-table'
 gem 'json', '~> 2.6', '>= 2.6.1'
-gem 'mini_racer', '~> 0.6.2'
 
 group :development, :test do
    gem "rspec-rails", '~> 5.0.0'
