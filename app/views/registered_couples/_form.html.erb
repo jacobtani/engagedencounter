@@ -11,7 +11,7 @@
     <%= f.date_field :wedding_date, placeholder: "Enter your wedding date", class: "form-control", control_col: "col-sm-8", label: "Wedding Date", required: true, value: Time.now.strftime('%Y-%m-%d') %>
     <%= f.collection_select :preferred_event, Event.all, :id, :event_date, prompt: 'Select event', selected: Event.order(:start_date).first, class: 'form-control', control_col: "col-sm-8", label: "Preferred Event" %>
     <%= f.select :religion, RegisteredCouple.religion_types.keys.to_a, control_col: "col-sm-8", label: "Religion", :selected => 'CATHOLIC'%>
-    <%= f.text_field :parish, placeholder: "Enter your parish", class: "form-control", control_col: "col-sm-8", requred: true %>
+    <%= f.text_field :parish, placeholder: "Enter your parish", class: "form-control", control_col: "col-sm-8", required: true %>
     <%= f.text_field :fiance_first_name, placeholder: "Enter your fiances first name", class: "form-control", control_col: "col-sm-8", autofocus: true, label: "Fiance First Name", required: true %>
     <%= f.text_field :fiance_surname, placeholder: "Enter your fiances surname", class: "form-control", control_col: "col-sm-8", label: "Fiance Surname", required: true %>
     <%= f.text_field :fiance_preferred_name, placeholder: "Enter your fiances preferred name", class: "form-control", control_col: "col-sm-8", label: "Fiance Preferred Name", required: true %>
