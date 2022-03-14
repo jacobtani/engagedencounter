@@ -60,6 +60,8 @@ GEM
       minitest (>= 5.1)
       tzinfo (~> 2.0)
       zeitwerk (~> 2.3)
+    addressable (2.8.0)
+      public_suffix (>= 2.0.2, < 5.0)
     autoprefixer-rails (10.3.3.0)
       execjs (~> 2)
     bcrypt (3.1.16)
@@ -90,6 +92,8 @@ GEM
     diff-lcs (1.4.4)
     docile (1.1.5)
     erubi (1.10.0)
+    ethon (0.15.0)
+      ffi (>= 1.15.0)
     execjs (2.8.1)
     factory_bot (6.2.0)
       activesupport (>= 5.0.0)
@@ -120,8 +124,6 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
-    httparty (0.14.0)
-      multi_xml (>= 0.5.2)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
     jbuilder (2.11.3)
@@ -134,6 +136,7 @@ GEM
       railties (>= 3.1.0)
       turbolinks
     json (2.6.1)
+    libv8-node (16.10.0.0)
     listen (3.7.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -148,10 +151,11 @@ GEM
     method_source (0.8.2)
     mini_mime (1.1.2)
     mini_portile2 (2.6.1)
+    mini_racer (0.6.2)
+      libv8-node (~> 16.10.0.0)
     minitest (5.14.4)
     mocha (1.1.0)
       metaclass (~> 0.0.1)
-    multi_xml (0.5.5)
     nenv (0.3.0)
     nio4r (2.5.8)
     nokogiri (1.12.5)
@@ -183,6 +187,7 @@ GEM
     pry-stack_explorer (0.4.9.2)
       binding_of_caller (>= 0.7)
       pry (>= 0.9.11)
+    public_suffix (4.0.6)
     puma (5.5.2)
       nio4r (~> 2.0)
     racc (1.6.0)
@@ -265,10 +270,10 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    sendinblue (2.4)
-      httparty
-      json
     shellany (0.0.1)
+    sib-api-v3-sdk (7.5.0)
+      json (~> 2.1, >= 2.1.0)
+      typhoeus (~> 1.0, >= 1.0.1)
     simplecov (0.12.0)
       docile (~> 1.1.0)
       json (>= 1.8, < 3)
@@ -288,6 +293,8 @@ GEM
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
     turbolinks-source (5.0.0)
+    typhoeus (1.4.0)
+      ethon (>= 0.9.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     uglifier (4.2.0)
@@ -308,6 +315,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  addressable (~> 2.8)
   bootstrap
   bootstrap_form
   bundler-audit (~> 0.9.0.1)
@@ -322,6 +330,7 @@ DEPENDENCIES
   jquery-turbolinks
   json (~> 2.6, >= 2.6.1)
   listen (~> 3.7)
+  mini_racer (~> 0.6.2)
   mocha
   pg (~> 1.2, >= 1.2.3)
   prawn
@@ -338,7 +347,7 @@ DEPENDENCIES
   rspec-its
   rspec-rails (~> 5.0.0)
   sass-rails (~> 6.0)
-  sendinblue
+  sib-api-v3-sdk (~> 7.5)
   uglifier (~> 4.2)
   web-console
 

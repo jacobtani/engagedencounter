@@ -10,10 +10,10 @@ class MessagesController < ApplicationController
       if @message.valid?
         SendEnquiryEmail.perform!(message: @message)
         flash[:notice] = "Message sent! Thank you for contacting us."
-        format.html { redirect_to contact_us_path }
+        format.html { redirect_to contact_us_pages_path }
       else
         flash[:error] = "Unfortunately the message was unable to be sent please try again"
-        format.html { redirect_to contact_us_path }
+        format.html { redirect_to contact_us_pages_path }
       end
     end
   end

@@ -25,7 +25,7 @@ class RegisteredCouplesController < ApplicationController
       if @registered_couple.save
         SendRegistrationConfirmationEmail.perform!(registered_couple: @registered_couple)
         flash.now[:success] = "Thank you for registering for an Engaged Encounter Weekend #{@registered_couple.first_name}."
-        format.html { render :new }
+        format.html { redirect_to root_path }
       else
         flash[:error] = "Unable to save new registered couple for Engaged Encounter Weekend"
         format.html { render :new }
