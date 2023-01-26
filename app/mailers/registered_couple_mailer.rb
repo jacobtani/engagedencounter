@@ -1,30 +1,44 @@
-require 'sendinblue'
+require 'sib-api-v3-sdk'
 
 class RegisteredCoupleMailer < ApplicationMailer
   default :from => "engagedencounterwellington@gmail.com"
 
   def registration_confirmation(registered_couple:)
-    m = Sendinblue::Mailin.new("https://api.sendinblue.com/v2.0",Rails.application.credentials.send_blue_api_key,5)
-    data = { "to" => { registered_couple.email => ([registered_couple.first_name, registered_couple.surname].reject(&:empty?).join(' ')) },
-       "from" => ["engagedencounterwellington@gmail.com", "Engaged Encounter Wellington"],
-       "subject" => "Registration Confirmation to Engaged Encounter",
-       "text" => ['Dear ' + registered_couple.preferred_name + '' + registered_couple.fiance_preferred_name + '
+		email_data = {
+			subject: 'Registration Confirmation to Engaged Encounter',
+			to: to(registered_couple),
+      replyTo: SibApiV3Sdk::SendSmtpEmailReplyTo.new(
+        email: "engagedencounterwellington@gmail.com",
+        name: "Engaged Encounter Wellington",
+      ),
+			htmlContent: html(registered_couple),
+      sender: SibApiV3Sdk::SendSmtpEmailSender.new(
+        email: "engagedencounterwellington@gmail.com",
+        name: "Engaged Encounter Wellington"
+      )
+		}
 
-       This is to confirm your registration to an Engaged Encounter weekend on ' + registered_couple.event.event_date.to_s + '. We look forward to meeting you on this weekend.
+		result = api_instance.send_transac_email(email_data)
+    puts result
+  rescue SibApiV3Sdk::ApiError => e
+	  puts "REGISTERED COUPLE MAILER: Exception when calling TransactionalEmailsApi->send_transac_email: #{e}"
+  end
 
-       The weekend is held at St Teresas Presbytery, 301 Karori Road, Karori, Wellington. It is a warm and comfortable venue. We want you to feel relaxed and comfortable on the weekend and recommend casual
-       clothing.
+  private
 
-       The event runs from Saturday 8am - 8pm and Sunday 8.45am - 4pm. Please note that breakfast is not provided but the rest of the weekend is fully catered.
-       In the week leading up to the weekend a member of the presenting team will phone you. Please ask them anything else you need to know to enable you to enjoy the weekend.
+  def api_instance
+		@api_instance ||= SibApiV3Sdk::TransactionalEmailsApi.new
+  end
 
-       We wish you all the very best for your EE Weekend and trust you will enjoy the time as you focus on each other and your future life together.
-       Please do not hesitate to contact us if you have any further questions/concerns.
+	def to(registered_couple)
+    [
+      {email: registered_couple.email, name: registered_couple.full_name_no_blanks}
+    ]
+	end
 
-       Cheers,
-       Simon and Kate Olsen (EE Registrars)
-       engagedencounterwellington@gmail.com'],
-       "html" => '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	def html(registered_couple)
+		'
+		<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
       <html xmlns="http://www.w3.org/1999/xhtml">
       <head>
       	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -182,8 +196,5 @@ class RegisteredCoupleMailer < ApplicationMailer
       </body>
       </html>
       '
-    }
-    result = m.send_email(data)
-    puts result
-  end
-end
+	end
+ end
