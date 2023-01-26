@@ -2,7 +2,7 @@
   <% @team = JSON.parse((File.read("#{Rails.root}/public/json/team.json"))) %>
   <% @team.each do |b| %>
     <div class="row text-center">
-      <dl class="col-sm-4">
+      <dl class="col-sm-3">
         <% @file_1 = b["file_1"] %>
         <dt>Couple Photo</dt>
         <dd><%= image_tag(@file_1, class: "tidy-img") %></dd>
@@ -11,7 +11,7 @@
         <dt>Couple Title</dt>
         <dd><%= b["title_1"] %></dd>
       </dl>
-      <dl class="col-sm-4">
+      <dl class="col-sm-3">
         <% @file_2 = b["file_2"] %>
         <dt>Couple Photo</dt>
         <dd><%= image_tag(@file_2, class: "tidy-img") %></dd>
@@ -20,7 +20,7 @@
         <dt>Couple Title</dt>
         <dd><%= b["title_2"] %></dd>
       </dl>
-      <dl class="col-sm-4">
+      <dl class="col-sm-3">
         <% @file_3 = b["file_3"] %>
         <dt>Couple Photo</dt>
         <dd><%= image_tag(@file_3, class: "tidy-img") %></dd>
@@ -28,6 +28,15 @@
         <dd><p><%= b["name_3"] %></p></dd>
         <dt>Couple Title</dt>
         <dd><%= b["title_3"] %></dd>
+      </dl>
+      <dl class="col-sm-3">
+        <% @file_4 = b["file_4"] %>
+        <dt>Couple Photo</dt>
+        <dd><%= image_tag(@file_4, class: "tidy-img") %></dd>
+        <dt>Couple Name</dt>
+        <dd><p><%= b["name_4"] %></p></dd>
+        <dt>Couple Title</dt>
+        <dd><%= b["title_4"] %></dd>
       </dl>
     </div>
   <% end%>
