@@ -22,3 +22,5 @@
 .DS_Store
 
 /config/master.key
+
+/config/credentials/development.key
