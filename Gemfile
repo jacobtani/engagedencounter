@@ -1,10 +1,14 @@
 source 'https://rubygems.org'
-ruby "2.7.0"
+ruby "3.1.2"
 
 gem 'rails', '~> 6.1', '>= 6.1.4.1'
 gem 'pg', '~> 1.2', '>= 1.2.3'
+gem 'puma', '~> 5.5', '>= 5.5.2'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.11', '>= 2.11.3'
+gem 'net-smtp', require: false
+gem 'net-imap', require: false
+gem 'net-pop', require: false
 gem 'bootstrap'
 gem 'bootstrap_form'
 gem 'jquery-turbolinks'
@@ -26,14 +30,13 @@ group :development, :test do
    gem 'pry'
    gem 'pry-nav'
    gem 'pry-rails'
-   gem 'pry-stack_explorer'
    gem 'pry-remote'
 end
 
 group :development do
   gem 'web-console'
   gem 'listen', '~> 3.7'
-  gem 'puma', '~> 5.5', '>= 5.5.2'
+  gem 'foreman'
 end
 
 group :test do
@@ -47,3 +50,5 @@ end
 group :production do
   gem 'rails_12factor'
 end
+
+gem "matrix", "~> 0.4.2"
