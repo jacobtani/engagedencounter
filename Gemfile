@@ -7,6 +7,8 @@ gem 'puma', '~> 5.5', '>= 5.5.2'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.11', '>= 2.11.3'
 gem 'net-smtp', require: false
+gem 'net-imap', require: false
+gem 'net-pop', require: false
 gem 'bootstrap'
 gem 'bootstrap_form'
 gem 'jquery-turbolinks'
