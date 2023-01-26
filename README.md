@@ -1,6 +1,6 @@
 # Engaged Encounter Wellington
 This is an application for the Wellington Engaged Encounter. It is a 
-Catholic marriage preparation course using Rails 6 with Ruby 2.7. Built on 
+Catholic marriage preparation course using Rails 6 with Ruby 3.1.2. Built on 
 Heroku 22 stack
 
 ### Setup
