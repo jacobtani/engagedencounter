@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   resources :messages, only: [:create]
   root 'pages#welcome'
   resources :events
-  resources :registered_couples
   resources :pages do
     get :welcome, on: :collection
     get :faq, on: :collection
@@ -11,5 +10,6 @@ Rails.application.routes.draw do
     get :feedback, on: :collection
     get :contact_us, on: :collection
     get :links, on: :collection
+    get :register, on: :collection
   end
 end
